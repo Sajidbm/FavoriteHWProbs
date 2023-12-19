@@ -1,0 +1,14 @@
+---
+title: "About"
+image: gerape.jpeg
+format: html
+about:
+  template: jolla
+---
+
+
+<div id="justify">
+   <p>My name is Sajid. I am a Junior, Math major at Reed College. As the title of this website suggests, I'll mostly be writing about some of my favorite HW problems from the math classes I have taken. Sometimes they'll include long expositions, sometimes they'll just be proofs and maybe a couple examples. But I expect to write often. If you have an interesting problem you'd like me to write about, send it over at sajidmahmud[sixty-one][at]gmail[dot]com.</p>
+</div>
+
+ 
