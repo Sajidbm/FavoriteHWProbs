@@ -115,7 +115,7 @@ Let's plot them on a circle:
 ![Figure 2: Residues on $\R/\Z$. The dashed line represents the point $0\equiv1$.](fig222.jpeg){ width=70% }
 
 
-Just like we proved, at least one interval (in our case, two) has two points. I'll leave you it to you to figure out how to parametrize the circle in order to accommodate any number of the form $qx$ where $x$ is irrational and see if you can ever 'touch the dashed line'. 
+Just like we proved, at least one interval (in our case, two) has two points. I'll leave it to you to figure out how to parametrize the circle in order to accommodate any number of the form $qx$ where $x$ is irrational and see if you can ever 'touch the dashed line'. 
 
 
 [^1]: The rational case is straightforward.
