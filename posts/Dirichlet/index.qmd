@@ -14,7 +14,8 @@ $$\newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\img}{\mathrm{img}}$$
+\newcommand{\img}{\mathrm{img}}
+$$
 
 <style>
 body {
@@ -36,9 +37,15 @@ The problem for today was on one of my real analysis homeworks, a few weeks afte
 
 ## Motivating the problem
 Let's think more broadly. Say you are given the real number[^2] , $\alpha = \frac{4}{5}$. Can you produce a "sequence" of rational numbers that get arbitrarily close to $\alpha$. To put it in mathematical terms, find the sequence 
-$$\{r_n\}_{n=1}^{\infty} = \{\frac{p}{q}: \text{ where $p,q$ are integers}\}$$ such that: 
-$$\lim_{n \to \infty}| \alpha- r_n| = 0$$ What's the most simple thing one could do to find such a sequence? Let's start by choosing a random number say $\frac{1}{2}$ and then decrease the distance between $\alpha$ and $\frac{1}{2}$ by half at each step: 
-$$r_1 = \frac{1}{2},~ r_2 = \frac{13}{20},~ r_3 = \frac{29}{40}, r_4 = \frac{61}{80} \cdots, r_n = \frac{4}{5} - \frac{3}{10 \cdot 2^{n-1}} $$
+$$
+\{r_n\}_{n=1}^{\infty} = \{\frac{p}{q}: \text{ where $p,q$ are integers}\}
+$$ such that: 
+$$
+\lim_{n \to \infty}| \alpha- r_n| = 0
+$$ What's the most simple thing one could do to find such a sequence? Let's start by choosing a random number say $\frac{1}{2}$ and then decrease the distance between $\alpha$ and $\frac{1}{2}$ by half at each step: 
+$$
+r_1 = \frac{1}{2},~ r_2 = \frac{13}{20},~ r_3 = \frac{29}{40}, r_4 = \frac{61}{80} \cdots, r_n = \frac{4}{5} - \frac{3}{10 \cdot 2^{n-1}} 
+$$
  Your local numerical analyst might say that the sequence linearly converges to $\frac{4}{5}$ with with a rate $\frac{1}{2}$. At this point, you might be asking yourself: "why do we care about rational approximations exclusively?" One of the reasons is to facilitate computer storage of numbers with minimal error. For practical purposes, it's much more efficient to store $\pi$ as $\frac{22}{7}$ or $\frac{355}{113}$ with some estimate of the error ($|\pi - \frac{22}{7}|< \epsilon$ for some $\epsilon>0$) than storing say the first $100$ decimal points (that'll be a computational heresy). 
 
 
@@ -89,7 +96,7 @@ $$
 For example, let $x = \pi$ and check that the following list indeed satisfies the inequality $\ref{ineq4}$: $$ |\pi - 3|, |2\pi-7|, |3\pi - 10|, \cdots,  |(N-1)\cdot \pi-p_{N-1}|$$
 
 
-So for each $q \in \{1, \cdots, N-1\}$ we get *the* list of inequalities of the form: $$0<|qx - p_i|<1 \text{ where } i \in \{1, \cdots, N-1\} $$ Now, one observes that $|qx-p_i|$ are really just fractions for each $i$ and we have $N-1$ of these fractions [^5]. But most importantly, we know none of these fractions are equal to each other because $qx$ is irrational [^6]. To see why, say we have $$2x - p_2 = 3x - p_3$$ Then, it'd imply that $x = p_2 - p_3$, which is sinful because we know irrational number cannot be expressed in terms of integers. So we have $N+1$ many real numbers $0,1,  \cdots, (N-1)x-p_{N-1}$ who live in the unit interval (if not, where else would fractions live?) Again, none of these numbers are equal to each other. But, if we partition $[0,1]$ with each partition having the length $1/N$, we get $N$ many partitions (for $N+1$ numbers). By pigeonhole principle [@Pigeon], we know that at least 2 of these numbers must be within the same partition. That is: $$|(q-q')x + (p'-p)| < \frac{1}{N}$$
+So for each $q \in \{1, \cdots, N-1\}$ we get *the* list of inequalities of the form: $$0<|qx - p_i|<1 \text{ where } i \in \{1, \cdots, N-1\} $$ Now, one observes that $|qx-p_i|$ are really just fractions for each $i$ and we have $N-1$ of these fractions [^5]. But most importantly, we know none of these fractions are equal to each other because $qx$ is irrational [^6]. To see why, say we have $$2x - p_2 = 3x - p_3$$ Then, it'd imply that $x = p_3 - p_2$, which is sinful because we know irrational numbers cannot be expressed in terms of integers. So we have $N+1$ many real numbers $0,1,  \cdots, (N-1)x-p_{N-1}$ who live in the unit interval (if not, where else would fractions live?) Again, none of these numbers are equal to each other. But, if we partition $[0,1]$ with each partition having the length $1/N$, we get $N$ many partitions (for $N+1$ numbers). By pigeonhole principle [@Pigeon], we know that at least 2 of these numbers must be within the same partition. That is: $$|(q-q')x + (p'-p)| < \frac{1}{N}$$
     
 Therefore, for infinitely many choices of $N>0$, we get infinitely many integers $(q-q')$ and $(p-p')$.
 
