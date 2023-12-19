@@ -28,7 +28,7 @@ text-align: justify}
 
 Let $\alpha$ be an irrational number. Prove that for all $\alpha$, there exists infinitely many $p$ and $q$ such that: $$0 < |\alpha - \frac{p}{q}| < \frac{1}{q^2}$$
 
-The problem for today was on one of my real analysis homeworks, a few weeks after we started measure theory. On this part of the post, I'll discuss the general version of the theorem, give the proof of the case when $\alpha$ is irrational [^1], and try to illustrate a cool geometric idea lying underneath it's surface.
+The problem for today was on one of my real analysis homeworks, a few weeks after we started measure theory. On this part of the post, I'll discuss the general version of the theorem, give the proof of the case when $\alpha$ is irrational [^1], and try to illustrate a cool geometric idea lying underneath its surface.
 
 
  *The Dirichlet's Approximation Theorem* is a fundamental result in Diophantine approximation [@Dirichlet]. It says that any real number has a sequence of 'good' rational approximations. You might be wondering why is it surprising given that we can always find *a* rational approximation of any real number. That is: given $\epsilon>0$ and real number $\alpha$, we can find rational number $r$ which is at least $\epsilon$ close to $\alpha$[^2]: $$|\alpha - r| < \epsilon$$  However, as we will soon find out, 'good' has a special meaning for us: it's what makes the theorem profoundly beautiful.
