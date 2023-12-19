@@ -11,7 +11,7 @@
     "href": "posts/Dirichlet/index.html",
     "title": "Mathematical Heresy and Irrational Numbers",
     "section": "",
-    "text": "\\[\\newcommand{\\C}{\\mathbb{C}}\n\\newcommand{\\N}{\\mathbb{N}}\n\\newcommand{\\Q}{\\mathbb{Q}}\n\\newcommand{\\R}{\\mathbb{R}}\n\\newcommand{\\Z}{\\mathbb{Z}}\n\\newcommand{\\img}{\\mathrm{img}}\\]\nHippasus of Metapontum was sentenced to death by drowning, for he ‘invented’ irrational numbers and thereby committed heresy against nature. Today, we’ll indulge in a similar sin."
+    "text": "Hippasus of Metapontum was sentenced to death by drowning, for he ‘invented’ irrational numbers and thereby committed heresy against nature. Today, we’ll indulge in a similar sin.\n\\[\\newcommand{\\C}{\\mathbb{C}}\n\\newcommand{\\N}{\\mathbb{N}}\n\\newcommand{\\Q}{\\mathbb{Q}}\n\\newcommand{\\R}{\\mathbb{R}}\n\\newcommand{\\Z}{\\mathbb{Z}}\n\\newcommand{\\img}{\\mathrm{img}}\\]"
   },
   {
     "objectID": "posts/Dirichlet/index.html#dirichlets-approximation-theorem",
