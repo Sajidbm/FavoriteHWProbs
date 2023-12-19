@@ -7,6 +7,7 @@ categories: [Real Analysis, Analytic Number Theory]
 image: "piman.jpeg"
 bibliography: ref_post1.bib
 ---
+Hippasus of Metapontum was sentenced to death by drowning, for he 'invented' irrational numbers and thereby committed heresy against nature. Today, we'll indulge in a similar sin.
 
 $$\newcommand{\C}{\mathbb{C}}
 \newcommand{\N}{\mathbb{N}}
@@ -20,7 +21,7 @@ body {
 text-align: justify}
 </style>
 
-Hippasus of Metapontum was sentenced to death by drowning, for he 'invented' irrational numbers and thereby committed heresy against nature. Today, we'll indulge in a similar sin.
+
 
 ## Dirichlet's Approximation Theorem:
 
