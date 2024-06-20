@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Sajid Bin Mahamud">
+<meta name="dcterms.date" content="2023-12-20">
 
-<title>FavoriteHWProblems</title>
+<title>FavoriteHWProblems - n-dimensional holes and how to find them</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,50 +61,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">FavoriteHWProblems</span>
     </a>
   </div>
@@ -115,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -128,119 +99,114 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">FavoriteHWProblems</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">n-dimensional holes and how to find them</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Topology</div>
+                <div class="quarto-category">Vector Calculus</div>
+                <div class="quarto-category">Homology Theory</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Sajid Bin Mahamud </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 20, 2023</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Analytic Number Theory">Analytic Number Theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Graph Theory">Graph Theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linear Algebra">Linear Algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Real Analysis">Real Analysis <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<p>This article was inspired by one of David Parkinson’s Homework problems from the <em>Topics in Geometry</em> class. We talked about DeRahm Cohomology for the week and the problem illustrated simply how powerful the tool might be. The problem was intended to show an application of DeRahm Cohomology to the familar concepts of curl, divergence and gradient.</p>
+<p><span class="math display">\[
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\mod}{\mathrm{~mod~}}
+\]</span></p>
+<style>
+body {
+text-align: justify}
+</style>
+<section id="the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem">The Problem</h2>
+<p>To see the exact problem, look for <em>problem 3</em> <a href="https://people.reed.edu/~davidp/341/hw/09hw.pdf">here</a>. We won’t consider the entire problem but will talk about a few parts to motivate the inquiry and perhaps give some food for thought for le curieux!</p>
+</section>
+<section id="motivating-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="motivating-the-problem">Motivating the Problem</h2>
+<p>If you need a primer on vector calculus, check the (<a href="#Vector_Field">Appendix</a>). At first, let’s look at an example<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. We will consider the two different vector fields <span class="math inline">\(\nu: \R^2- \{0\} \to \R^2\)</span>, and <span class="math inline">\(v: \R^2 \to \R^2\)</span> given by the same form <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
+<p><span class="math display">\[
+v = \nu = \frac{-y }{x^2+y^2} ~ dx+ \frac{x }{x^2+y^2} ~ dy
+\]</span></p>
+<p>In physical terminology, given the vector field (say a force field), it is natural to ask if the field is conservative<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> and therefore has a potential function.</p>
+<p>Finally, in vector calculus lingo, one asks if the line integral of <span class="math inline">\(v\)</span> along a smooth closed loop <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <span class="math inline">\(C: [0,1] \to \R^2\)</span> is zero. All of these ask the same question. But despite <span class="math inline">\(v\)</span> and <span class="math inline">\(\nu\)</span> being the same function, having and not having a puncture in its domain determines if the field is guranteed to have a potential function (or if the form is guaranteed to be exact).</p>
+<p>In the language of differential forms, one can ask if the form for the field <span class="math inline">\(v\)</span> (or <span class="math inline">\(\nu\)</span>) is an exact form.</p>
+<p>Let’s compute the line integral of <span class="math inline">\(v\)</span> along a closed circle <span class="math inline">\(C:[0,1] \to \R^2\)</span>, given by <span class="math inline">\(C(t) = (\cos 2 \pi t, \sin 2 \pi t)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \int_{C} v &amp;= \int v \circ C (t)\\
+                &amp;= \int \frac{-(\sin 2\pi t) d(\sin)}{}
+\end{aligned}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="vectorfield-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 1: The vector field <span class="math inline">\((\frac{-y}{x^2+y^2}, \frac{x}{x^2+y^2})\)</span> in function notation.</figcaption>
+</figure>
+</div>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
+<section id="vector-field" class="level3">
+<h3 class="anchored" data-anchor-id="vector-field">Vector Field</h3>
+<p>A vector field is a vector-valued function that assigns a vector to each point of its domain. For example: consider the simple vector field <span class="math inline">\(v: \R^2 \to \R^2\)</span> given by: <span class="math inline">\(v(x,y) = (x,y)\)</span>. Given any point <span class="math inline">\(p=(x,y)\)</span> it assigns the vector <span class="math inline">\((x,y)\)</span> to p.&nbsp;A visual representation of the field is given by:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="xyvectfield.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure x: The vector field <span class="math inline">\(v(x,y) = (x,y)\)</span></figcaption>
+</figure>
+</div>
 
 
+</section>
+</section>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Graph Theory,Linear Algebra" data-listing-date-sort="1718744400000" data-listing-file-modified-sort="1718920144134" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
-<div class="thumbnail">
-<p><a href="./posts/Summer-2024/index.html"> <img src="./posts/Summer-2024/picz.jpeg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Summer-2024/index.html">
-<h3 class="no-anchor listing-title">
-Summer in Finland
-</h3>
-<div class="listing-subtitle">
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Graph Theory'); return false;">
-Graph Theory
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Linear Algebra'); return false;">
-Linear Algebra
-</div>
-</div>
-<a href="./posts/Summer-2024/index.html">
-<div class="listing-description">
-It’s becoming incresingly important to maintain a catalog of my activities during the summer. I ‘will’ write a seperate post about my study abroad semester. For now, I shall…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Summer-2024/index.html">
-<div class="listing-date">
-Jun 19, 2024
-</div>
-<div class="listing-author">
-Sajid Bin Mahamud
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Real Analysis,Analytic Number Theory" data-listing-date-sort="1702764000000" data-listing-file-modified-sort="1718920365213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
-<div class="thumbnail">
-<p><a href="./posts/Dirichlet/index.html"> <img src="./posts/Dirichlet/hipp.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Dirichlet/index.html">
-<h3 class="no-anchor listing-title">
-Mathematical Heresy and Irrational Numbers
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Real Analysis'); return false;">
-Real Analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Analytic Number Theory'); return false;">
-Analytic Number Theory
-</div>
-</div>
-<a href="./posts/Dirichlet/index.html">
-<div class="listing-description">
-Hip…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Dirichlet/index.html">
-<div class="listing-date">
-Dec 17, 2023
-</div>
-<div class="listing-author">
-Sajid Bin Mahamud
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>We will use the differntial forms notation for vector fields.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Or function, if you like to think of vector fields as vector-valued functions.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>One of the reasons is to be able to talk about work done in moving an object from one point to the other without having to invoke double integrals.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>A <em>smooth closed loop</em> <span class="math inline">\(C:[0,1] \to \R^n\)</span> is a curve in <span class="math inline">\(\R^n\)</span> where <span class="math inline">\(C(0) = C(1)\)</span>, and <span class="math inline">\(C'(t)\)</span> is continious for all <span class="math inline">\(t \in [0,1]\)</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

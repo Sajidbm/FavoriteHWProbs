@@ -1,0 +1,120 @@
+---
+title: "Leftist Numbers: Tale of the Proletariat Number System"
+author: "Sajid Bin Mahamud"
+format: html
+date: "2023-12-20"
+categories: [Abstract Algebra, Number Theory, Real Analysis]
+# image: "piman.jpeg"
+bibliography: ref2.bib
+draft: true
+---
+<style>
+body {
+text-align: justify}
+</style>
+$$ \newcommand{\C}{\mathbb{C}} \newcommand{\N}{\mathbb{N}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} \newcommand{\Z}{\mathbb{Z}} \newcommand{\img}{\mathrm{img}}
+\newcommand{\mod}{\mathrm{~mod~}} 
+$$
+
+The inspiration for the post comes from one of my real analysis homoworks. On the homework [HW2, @chang], we were interested in investigating properties of the $p$*-adic* metric. Here, I'll go one step back and motivate the study of $p$*-adics*. In doing so, I will try to be as detail oriented as possible. But I'll make sure to add a poem once in a while to keep things sweet.
+
+An explanation for the politically charged click-bait is immidiately in order. It all comes down to the notion of proximity or closeness. In our typical base-$10$ representation[^rep] of rational numbers, $23.1, 23.17, 23.176, 23.1768$ are getting closer. In other words, their differences are getting smaller and smaller: $.07, .006, .0008$. Hence, the longer the digits to the right of the decimal point agree, the closer the numbers get. As we'll see, this is due to the defined metric on the space. So, it is natural to wonder, if there is a metric where the opposite is true. That is, a system where numbers get closer as they agree to the left: $57323.1,7323.1, 323.1, 23.1$.
+
+## P-adic numbers
+
+The main object of interest for us today will be *p-adic numbers*. We'll first see *what* they are, *what they do* and then ask *why* such a thing even exists. The digits of the $p$-adic number system are given by: 
+
+
+
+### Completion of $Q$
+
+Let $M$ be a [metric space](https://en.wikipedia.org/wiki/Metric_space) and $\{p_n\} \subseteq M$ be a cauchy sequence [^cauchy]. $M$ is a complete metric space if for every cauchy sequence $\{p_n\}$, there exists $p \in M$ such that:
+$$
+\lim_{n \to \infty} p_n = p
+$$
+
+In other words, in a complete metric space $M$, every cauchy sequence converges to a point *in* M. Now it's easy to see that $(\Q,d)$ is not complete [^rationalmetric]. This follows from the fact that rational sequences can [approximate](https://sajidbm.github.io/FavoriteHWProbs/posts/Dirichlet/) irrational numbers but cannot converge to one, which is to say that rational sequences cannot have an irrational limit. So, how should we fill in these so-called holes? The fix is known as *completion*. One could suggest that adding irrational numbers to the set $\Q$ in order to get $\R$ should fix the "hole problem". But recall that the construction of $\R$ is given explicitly using $\Q$ [Dedekind cuts, @rudin]. So it turns into a circular argument if one insists on making reference to $\R$, a larger space, to complete $\Q$. Therefore, as [Lenin](https://en.wikipedia.org/wiki/Aleksandr_Ulyanov) would say: 
+
+>We shall go another way, Sasha. 
+
+Our approach to completion of $(Q,d)$, call it $(Q^*,d^*)$ requies us to (1) rely only on $Q$ and (2) ensure that $(Q^*,d)$ contains $(Q,d)$ as a dense subspace [^density]. Now, under normal circumstances, I'd give you the full construction. But for the purposes of this article, I will just give an overview of the underlying idea. The main idea of the construction of $(Q^*, d^*)$ is to find suitable candidates for limits of cauchy sequences that do not converge and preserve the limits of cauchy sequences that do. Meet the mightiest tool in mathematics: equivalence classes. Identify two cauchy sequences as being equivalent if they are "basically identical" in the long run [^commiejoke1]. A more mathematical formulation would be to say that the sequence $\{x_n\}$ is equivalent to $\{y_n\}$ if $$ \lim_{n \to \infty} |x_n - y_n| = 0$$ Note that any rational number will have it's own equivalence class and any irrational number will have it's own, just like we desired. Now it only remains to find a distance function that satisfies the subspace criteria. 
+
+Enter the promised land: $p$*-adic* numbers. Instead of using the absolute difference metric $d = |x-y|$ for $x,y \in \Q$, we could use a different metric to complete $\Q$: the $p$*-adic* metric. The $p$*-adic* metric on $\Q$ is given by function $d_p: \Q \to \Z \cup \{\infty\}$ defined by
+$$d_p(x,y) =
+\begin{cases}
+   p^{-\nu_p(x-y)} &\text{ when } x \neq y\\
+   0 &\text{ when } x \neq y
+\end{cases}
+$$
+ 
+where $\nu_p$ is the $p$-adic valuation. The $p$-adic valuation of $n$, $\nu_p(n)$ is simply the highest power of $p$ that divides $n$. For example, the $5$-adic valuations of $4, 5, 6, 25, 125$ are given by: 
+
+$$
+\nu_5(4) = 0,~ \nu_5(5) = 1,~ \nu_5(6) = 1,~ \nu_5(25) = 2,~ \nu_5(125) = 3
+$$
+
+Conveniently, the $p$-adic valuation of the rational number $\frac{a}{b}$ is given by: $$\nu_p(\frac{a}{b}) = \nu_p(a) - \nu_p(b)$$
+
+
+## Algebraic Construction
+
+The full origination story is beyond the scope of this article. Here goes the tea. It's often said [@feog] that German Mathematician K. Hensel studied $p$*-adic* numbers noticing the similarity between $\Z$ and $\C[x]$ [^fractions], where $\C[x]$ is the ring of polynomials (with one variable) with complex coefficients. Both objects are rings which are have unique factorization [^UFD]. You probably know the case for $\Z$ already: [the FT of arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic). A similar case of $\C[x]$ is also known: [the FT of algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra). Roughly, what this means is that if you take any element from these objects, they can be uniquely factored into 'irreducible' elements upto signs. If you are looking for a more through explanation, check ([Appendix](#unique factorization domains)). Hensel's idea was to compare the roles of $1$-degree polynomials and primes. That is: given the polynomial $p(x) \in \C[x]$ we can find the taylor expansion around the point $c \in \C$: $$ p(x) = p(c) + p'(a) (x-c) + \frac{p''(a)}{2 !} (x-c)^2 + \cdots  $$ Similarly, given $k \in \Z$, we can find the base $p$ representation of $x$, where $p$ is a prime: $$ k = b_0 + b_1 p + b_2 p^2 + b_3 p^3 + \cdots $$ 
+
+The name $p$*-adic* integers should tell you that it somehow 'behaves like' the integers. That is, it has some of the algebraic properties enjoyed by the integers as a commutative ring with identity. 
+
+<!-- But this alone shouldn't necessitate the existence of $p$*-adic* integers, should it? So, let's be ambitious and see what happens if we impose one additional structure: the cancellation rule [^1].  -->
+
+
+The construction I offer has been adapted from an exercise in [Section 7.6, Ex 11, @DF]. If you need an abstract algebra primer, check the ([Appendix](#rings)). We utilize a construction known as: *inverse limit*. The main idea behind this construction is to glue together rings using ring homorphisms (which can be generalized for any algebraic object, of course). More formally: 
+
+> Let $p$ be a prime and $\Z/p^i\Z$ be integer modulo $p^i$ where $i,j \in \Z^+$. Define $\mu_{ji}: \Z/p^j\Z \to \Z/p^i\Z$ be the natural projection map such that $$ \mu_{ji}: a (\mod p^j)\to a (\mod p^i) $$ where $i \leq j$. 
+ 
+
+Our first claim is that a typical element, $b \in \Z_p$ can be defined uniquely as an infinite power series: 
+$$
+b = b_0 + b_1 p^1 + b_2 p^2 + \cdots 
+$$
+where $b_i \in \{0,1,\cdots, p-1\}$ To see why, note that for any element $a_j \in \Z/p^j\Z$ where have the following base-$p$ expansion: 
+$$
+a_j = b_0 p^0 + b^1 p^1 + b^2 p^2 + \cdots
+$$
+Applying $\mu_{ji}$ to $a_j = a (\mod p^j)$ we get: 
+
+$$
+\begin{aligned}
+    \mu_{ji}(a_j) &= b_0 p^0 (\mod p^i) + b_1 p^1 (\mod p^i) + b_2 p^2 (\mod p^i )+ \cdots
+\end{aligned}$$
+
+## Appendix 
+
+### Groups: 
+A group $(G, \star)$ is a set, together the *associative* binary operation $\star$ satisfying the following properties: (1) $G$ contains an identity, (2) if $u,v \in G$, then $u \star v \in G$. Examples: $(\Z,+), (\R, \times)$ are groups, where as $(\Z,\times)$ isn't. A group is called *abelian* if $\star$ is commutative. 
+
+### Rings: 
+
+A ring $(R, +, \times)$ is an abelian group $(R, +)$, together the *associative* binary operations $\times$ satisfying the following properties: 
+
+
+### Unique Factorization Domains
+
+$\Z$ and $\C[x]$ are both integral domains, meaning that [cancellation law](https://en.wikipedia.org/wiki/Cancellation_property) applies to both the commutative rings. On top of this, they also enjoy unique factorization. This means, any non-zero $r$ in $\Z$ or $\C[x]$ that is not a unit [^unit] can be written as a finite product of irreducibles [^irred] upto multiplication by an unit. For $\Z$ the units are $-1,1$ and the irreducibles are the prime numbers. For $\C[x]$ the units are $-1,1,i,-i$ and the irreducibles are all the polynomials of degree $1$.
+
+
+[^1]: Let $a,b,c \in \Z$. If $ab=ac$ and $a \neq 0$, then: $b=c$. This, practically, rules out any zero divisors from the ring. 
+[^cauchy]: The terms of the sequence gets closer as $n \to \infty$. Check out [wikipedia](https://en.wikipedia.org/w/index.php?title=Cauchy_sequence).
+[^rationalmetric]: For $x,y \in \Q$, distance between $x,y$ is given by: $d(x,y) = |x-y|$ 
+
+[^density]: $Q$ is a dense subset of $Q^*$ if for any $a,b \in \Q^*$ where $a<b$ there exists $c \in \Q$ such that $a<c<b$. $(Q,d)$ is a subspace of the metric space $(Q^*, d^*)$ if additonally $Q$ inherits the metric imposed on $Q^*$. That is: $d(x,y) = d^*(x,y)$
+
+[^commiejoke1]: Like the Bolsheviks and Mensheviks, sort of. 
+
+[^fractions]: Together with the [field of fractions](https://en.wikipedia.org/wiki/Field_of_fractions) $\Q$ and $C(x)$ respectively. 
+
+[^UFD]: The "bourgeoisie" will call them *unique factorization domains* 
+
+[^unit]: Let $R$ be a ring. $r \in R$ is a unit is there exists $s \in R$ such that $rs=1$.
+
+[^irred]: A non-unit element $r \in R$ is irreducible if it is not invertible, that for all $r' \in R$, we have that $rr' \neq 1$.
+
+[^rep]: Not to philosophize this too much but numbers and their representations are not the same things. Take the rational *number* $\frac{1}{3}$, whose rightist *representation* is given by $\overline{.3}$. This is to indicate that following the decimal, we have infinitely many $3$'s. Or, $\frac{1}{37} = \overline{.027}$ for that matter. This is known as a repeating representation. One could also have a terminating representation, for example: $\frac{1}{5} = .20$. 

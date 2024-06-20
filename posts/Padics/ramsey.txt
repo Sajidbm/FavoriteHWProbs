@@ -1,0 +1,20 @@
+To demonstrate that Ramsey theory is not all about purely mathematical constructions, it’s worth noting a interesting example of Ramsey theory appearing in history. This example comes from computer scientist William Gasarch, whose interest in Ramsey theory led him to find interdisciplinary applications of Ramsey theory. It discusses the work of a scholar
+of pre-Christian England named Sir Woodsor Kneading, who was studying interactions of various lords in small regions of England. Kneading noted 42 instances from 600 to 400 BC where the arrival of a sixth lord into a peaceful region with five lords was followed by the start of a war within a short period of time, while a unique case where war did not break out
+occurred when there was an alliance formed between all six lords in the region [6]. Kneading writes: “I noticed that either (1) three, four, or five of them formed an alliance and, thinking themselves quite powerful, merged armies and attacked the other lords, or (2) there were
+three or more of them who were pairwise enemies, and in that case war broke out among
+the factions...” [6]
+This observation is astounding because it is very reminiscent of the fact that R(3, 3) = 6,
+in that a group of six lords guaranteed a group of at least three that were all mutual allies
+or mutual enemies, and thus caused the region to erupt in war in all but one exceptional
+case. The next historical development that Kneading observes is also extremely applicable
+to Ramsey theory. He notes that after 400 BC there were “cases of six lords in a region and
+no war,” which he argues was due to technological advancements that increased risks with
+fighting (this was later confirmed) [6]. But astonishingly, Kneading finds that:
+“Between the years of 400 and 200 BC, whenever there were 18 lords in proximity either
+(1) between four and seventeen of them formed an alliance and, thinking themselves quite
+powerful, merged armies and attacked the other lords, or (2) there were four or more of them
+who were pairwise enemies, and in that case war broke out among the factions.” [6]
+With the knowledge that R(4, 4) = 18, Kneading’s observation is another example of
+a natural development of two Ramsey numbers that followed from logical, historical observations! While this is not necessarily a proof that the conditions of Ramsey numbers are
+guaranteed to hold, it is very inspiring to see this play out in a real situation beyonds the
+bounds of mathematics journals.
