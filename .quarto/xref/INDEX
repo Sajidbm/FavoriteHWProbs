@@ -1,0 +1,29 @@
+{
+  "index.qmd": {
+    "index.html": "edd24660"
+  },
+  "posts/post-with-code/index.qmd": {
+    "index.html": "479d12c9"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "46e428eb"
+  },
+  "about.qmd": {
+    "about.html": "c7ab5980"
+  },
+  "posts/Dirichlet/index.qmd": {
+    "index.html": "98f27ca9"
+  },
+  "Untitled.ipynb": {
+    "Untitled.html": "55c1b1a1"
+  },
+  "posts/Padics/index.qmd": {
+    "index.html": "42c21a6f"
+  },
+  "posts/DeRahm-Cohomology/index.qmd": {
+    "index.html": "359ec741"
+  },
+  "posts/Summer-2024/index.qmd": {
+    "index.html": "1146cb0a"
+  }
+}
