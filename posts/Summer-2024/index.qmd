@@ -45,7 +45,7 @@ Now, I have sufficient reasons to be interested in the problem. With the help of
 ***Lemma 1.3:*** $A$ and $B$ satisfy the diagonal criteria if and only if $\mathrm{diag}(M^k) = \mathrm{diag}(N^k)$ where $M,N$ are permutation similar to $A$ and $B$ respectively. 
 
 
-[^1]: An algortihm that takes $O(n^k)$ time to run where $n$ is the size of the input and $k$ is a positive constant.
+[^1]: An algorithm that takes $O(n^k)$ time to run where $n$ is the size of the input and $k$ is a positive constant.
 
 [^const]: The run time of the operation is independent of the size of input.
 
