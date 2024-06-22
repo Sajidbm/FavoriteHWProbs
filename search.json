@@ -32,7 +32,7 @@
     "href": "posts/Summer-2024/index.html#footnotes",
     "title": "Summer in Finland",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nAn algortihm that takes \\(O(n^k)\\) time to run where \\(n\\) is the size of the input and \\(k\\) is a positive constant.↩︎\nThe run time of the operation is independent of the size of input.↩︎\nIn practical terms, on an \\(O(n^5)\\) algortithm, if \\(n\\) doubles, the amount of time it takes to solve the problem is \\(2^5 = 32\\) times in proportion. On an \\(2^{((O\\log n)^3)}\\) algorithm the growth is quasi-polynomial. Meaning for \\(n=10,100,1000\\), it respectively takes \\(2^7 = 128\\) and \\(2^{19}\\) times longer than the former.↩︎"
+    "text": "Footnotes\n\n\nAn algorithm that takes \\(O(n^k)\\) time to run where \\(n\\) is the size of the input and \\(k\\) is a positive constant.↩︎\nThe run time of the operation is independent of the size of input.↩︎\nIn practical terms, on an \\(O(n^5)\\) algortithm, if \\(n\\) doubles, the amount of time it takes to solve the problem is \\(2^5 = 32\\) times in proportion. On an \\(2^{((O\\log n)^3)}\\) algorithm the growth is quasi-polynomial. Meaning for \\(n=10,100,1000\\), it respectively takes \\(2^7 = 128\\) and \\(2^{19}\\) times longer than the former.↩︎"
   },
   {
     "objectID": "posts/Dirichlet/index.html",
