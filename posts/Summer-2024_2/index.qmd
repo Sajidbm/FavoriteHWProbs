@@ -6,7 +6,7 @@ date: "2024-06-27"
 categories: [Graph Theory, Linear Algebra, Summer 2024]
 # image: "picz.jpeg"
 # bibliography: ref2.bib
-
+draft: true
 ---
 <style>
 body {
