@@ -3,7 +3,7 @@ title: "Summer in Finland"
 author: "Sajid Bin Mahamud"
 format: html
 date: "2024-06-19"
-categories: [Graph Theory, Linear Algebra]
+categories: [Graph Theory, Linear Algebra, Summer 2024]
 image: "picz.jpeg"
 # bibliography: ref2.bib
 
@@ -12,6 +12,8 @@ image: "picz.jpeg"
 body {
 text-align: justify}
 </style>
+
+[This article was corrected on June 26, 2024] 
 
 It's becoming incresingly important to maintain a catalog of my activities during the summer. I 'will' write a seperate post about my study abroad semester. For now, I shall focus on the present. About two weeks after finishing my semester in Budapest, I arrived in Finland on May 26th. I had the weekend to get settled before I officially started working on May 28th. 
 
@@ -36,7 +38,7 @@ We are interested in diagonal entries resulting from multiplication of adjacency
 
 The run time of the best known algorithm to date is $2^{(O(\log n )^3)}$ (Harald Helfgott, 2017). The previously known bound is due to Luks and Babai: $2^{(O( \sqrt{n \log n} )}$. This jump from sub-exponential to quasi-polynomial took about 40 years [^bounds]. Hence the suspicion that the conjecture could be false.
 
-Now, I have sufficient reasons to be interested in the problem. With the help of some simple python, I have verified the contrapositive of the conjecture for all pairs of non-isomorphic graphs on upto 10 vertices which is roughly $1,229,2182$ many graphs. It seems like for small number of vertices, the condition does determine all graphs upto isomorphism. Right now, I am interested in special classes of graphs such as trees and regular graphs. 
+Now, I have sufficient reasons to be interested in the problem. With the help of some simple python, <span style="color:red"> I have verified the contrapositive of the conjecture for all pairs of non-isomorphic graphs on upto 10 vertices which is roughly $1,229,2182$ many graphs </span>[^corr].  It seems like for small number of vertices, the condition does determine all graphs upto isomorphism. Right now, I am interested in special classes of graphs such as trees and regular graphs. 
 
 
 ## Appendix 
@@ -49,4 +51,6 @@ Now, I have sufficient reasons to be interested in the problem. With the help of
 
 [^const]: The run time of the operation is independent of the size of input.
 
-[^bounds]: In practical terms, on an $O(n^5)$ algortithm, if $n$ doubles, the amount of time it takes to solve the problem is $2^5 = 32$ times in proportion. On an $2^{((O\log n)^3)}$ algorithm the growth is quasi-polynomial. Meaning for $n=10,100,1000$, it respectively takes $2^7 = 128$ and $2^{19}$ times longer than the former. 
+[^bounds]: In practical terms, on an $O(n^5)$ algorithm, if $n$ doubles, the amount of time it takes to solve the problem is $2^5 = 32$ times in proportion. On an $2^{((O\log n)^3)}$ algorithm the growth is quasi-polynomial. Meaning for $n=10,100,1000$, it respectively takes $2^7 = 128$ and $2^{19}$ times longer than the former. 
+
+[^corr]: Due to a coding error, my algorithm was unable to detect counterexamples on $n=10$ vertices. This statement is no longer true following the fix.  

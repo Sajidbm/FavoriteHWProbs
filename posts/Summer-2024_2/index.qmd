@@ -1,0 +1,41 @@
+---
+title: "One Extra Pull Up for Every Cocylic Graph"
+author: "Sajid Bin Mahamud"
+format: html
+date: "2024-06-27"
+categories: [Graph Theory, Linear Algebra, Summer 2024]
+# image: "picz.jpeg"
+# bibliography: ref2.bib
+
+---
+<style>
+body {
+text-align: justify}
+</style>
+
+On my [previous post](https://sajidbm.github.io/FavoriteHWProbs/posts/Summer-2024/), I claimed that upto $10$ vertices, the *conjecture 1.1* holds true. For better or worse, the claim isn't true. It turns out due to a classfication error (more on this later), I was unable to detect graphs that does disprove *conjecture 1.1*. With graphs found through the new algorithm, I have shown that *conjecture 1.1* is false. 
+
+## Housekeeping
+
+[Dr. Vanni Noferini](https://math.aalto.fi/~noferiv1/) and I are working on a graph theory project at Aalto University in Finland. I will first state the conjecture we have been working on. 
+
+Let $A \in M_{n\times n}(\mathbb{R})$. Define $$\mathrm{diag}(A): M_{n\times n} \to M_{n \times 1} \text{ where } \mathrm{diag}(A) = \{a_{ii}\}_{i=1}^{n}$$
+
+***Conjecture 1.1:*** (False) *Let $G$ and $H$ be simple graphs, and $A$, $B$ be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix $\pi$ such that for all $k\geq 0$ such that $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)$$ Then $G$ and $H$ are isomorphic.*
+
+*Lemma 1.2* tells us that we only needs to check for $2\leq k \leq n$ and with *Lemma 1.3* we have that it is enough to require $\pi = I$ for all $k$. 
+
+
+## Appendix 
+***Lemma 1.2:*** Let $A,B$ be real symmetric. There exists a unique permutation matrix $\pi$ for all $k\geq 0$ such that $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)$$ if and only if $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k) ~~~(\star)$$ for  $0\leq k \leq n$. 
+
+***Lemma 1.3:*** $A$ and $B$ satisfy the diagonal criteria if and only if $\mathrm{diag}(M^k) = \mathrm{diag}(N^k)$ where $M,N$ are permutation similar to $A$ and $B$ respectively. 
+
+
+[^1]: An algorithm that takes $O(n^k)$ time to run where $n$ is the size of the input and $k$ is a positive constant.
+
+[^const]: The run time of the operation is independent of the size of input.
+
+[^bounds]: In practical terms, on an $O(n^5)$ algorithm, if $n$ doubles, the amount of time it takes to solve the problem is $2^5 = 32$ times in proportion. On an $2^{((O\log n)^3)}$ algorithm the growth is quasi-polynomial. Meaning for $n=10,100,1000$, it respectively takes $2^7 = 128$ and $2^{19}$ times longer than the former. 
+
+[^corr]: Due to a coding error, my algorithm was unable to detect counterexamples on $n=10$ vertices. This statement is no longer true following the fix.  
