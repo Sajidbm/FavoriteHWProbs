@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sajid Bin Mahamud">
-<meta name="dcterms.date" content="2024-06-19">
+<meta name="dcterms.date" content="2024-06-27">
 
-<title>FavoriteHWProblems - Summer in Finland</title>
+<title>FavoriteHWProblems - One Extra Pull Up for Every Cocylic Graph</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Summer in Finland</h1>
+      <h1 class="title">One Extra Pull Up for Every Cocylic Graph</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Graph Theory</div>
                 <div class="quarto-category">Linear Algebra</div>
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 19, 2024</p>
+        <p class="date">June 27, 2024</p>
       </div>
     </div>
     
@@ -144,25 +144,13 @@ ul.task-list li input[type="checkbox"] {
 body {
 text-align: justify}
 </style>
-<p>[This article was corrected on June 26, 2024]</p>
-<p>It’s becoming incresingly important to maintain a catalog of my activities during the summer. I ‘will’ write a seperate post about my study abroad semester. For now, I shall focus on the present. About two weeks after finishing my semester in Budapest, I arrived in Finland on May 26th. I had the weekend to get settled before I officially started working on May 28th.</p>
-<section id="what-am-i-doing" class="level2">
-<h2 class="anchored" data-anchor-id="what-am-i-doing">What am I doing?</h2>
-<p>I’m currently working in the research group of <a href="https://math.aalto.fi/~noferiv1/">Dr.&nbsp;Vanni Noferini</a> at Aalto University in Espoo, Finland. Espoo is located to the west of the capital Helsinki. Dr.&nbsp;Vanni specializes in Matrix theory and he is advising my project in Algebraic Graph Theory. The project is scheduled to run for about 10 weeks. With that settled, let’s dive into the problem itself.</p>
+<p>On my <a href="https://sajidbm.github.io/FavoriteHWProbs/posts/Summer-2024/">previous post</a>, I claimed that upto <span class="math inline">\(10\)</span> vertices, the <em>conjecture 1.1</em> holds true. For better or worse, the claim isn’t true. It turns out due to a classfication error (more on this later), I was unable to detect graphs that does disprove <em>conjecture 1.1</em>. With graphs found through the new algorithm, I have shown that <em>conjecture 1.1</em> is false.</p>
+<section id="housekeeping" class="level2">
+<h2 class="anchored" data-anchor-id="housekeeping">Housekeeping</h2>
+<p><a href="https://math.aalto.fi/~noferiv1/">Dr.&nbsp;Vanni Noferini</a> and I are working on a graph theory project at Aalto University in Finland. I will first state the conjecture we have been working on.</p>
 <p>Let <span class="math inline">\(A \in M_{n\times n}(\mathbb{R})\)</span>. Define <span class="math display">\[\mathrm{diag}(A): M_{n\times n} \to M_{n \times 1} \text{ where } \mathrm{diag}(A) = \{a_{ii}\}_{i=1}^{n}\]</span></p>
-<p>The main conjecture is the following:</p>
-<p><strong><em>Conjecture 1.1:</em></strong> <em>Let <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> be simple graphs, and <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix <span class="math inline">\(\pi\)</span> such that for all <span class="math inline">\(k\geq 0\)</span> such that <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)\]</span> Then <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are isomorphic.</em></p>
-<p>It’s not too hard to show that one only needs to check for <span class="math inline">\(2\leq k \leq n\)</span> (See Lemma 1.2). With a little bit more work, one can also show that it is enough to require that <span class="math inline">\(\pi = I\)</span> for all <span class="math inline">\(k\)</span> (See Lemma 1.3).</p>
-<p>Those who know a little bit about graph theory may also recall that there is no known polynomial time algorithm<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (read: efficient) that can determine if two graphs are isomorphic. It’s also not known if the problem is <em>NP</em>-complete. Essentially, my conjecture, if true, provides a polyomial time algorithm that solves the graph isomorphism problem. Let me demonstrate this by computing the computational cost of the algorithm described in <em>Conjecture 1.1</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="swat.jpeg" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Figure 1: There is no going back</figcaption>
-</figure>
-</div>
-<p>We are interested in diagonal entries resulting from multiplication of adjacency matrices. Suppose we have a model of computation where field operations (i.e., muplication, addition) takes constant time <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Multiplying two <span class="math inline">\(n\times n\)</span> matrices requires <span class="math inline">\(n^3\)</span> multiplications and <span class="math inline">\(n^2(n-1)\)</span> additions, totaling <span class="math inline">\(2n^3-n^2\)</span> steps. Then multiplying <span class="math inline">\(k&gt;2\)</span> adjacency matrices will require <span class="math inline">\((k-1)\cdot(2n^3-n^2)\)</span> many steps. For each adjacency matrix, we’d like to perform <span class="math display">\[ \sum_{k=2}^{n} (k-1)= \frac{(n-1)(n-2)}{2} \approx n^2\]</span> many matrix multiplications. Hence, in total <span class="math inline">\(2n^2(2n^3 - n^2) \approx n^5\)</span> many steps for a given pair of graphs. In computer science language, the time complexity of the algorithm is <span class="math inline">\(O(n^5)\)</span>, polynomial time.</p>
-<p>The run time of the best known algorithm to date is <span class="math inline">\(2^{(O(\log n )^3)}\)</span> (Harald Helfgott, 2017). The previously known bound is due to Luks and Babai: <span class="math inline">\(2^{(O( \sqrt{n \log n} )}\)</span>. This jump from sub-exponential to quasi-polynomial took about 40 years <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Hence the suspicion that the conjecture could be false.</p>
-<p>Now, I have sufficient reasons to be interested in the problem. With the help of some simple python, <span style="color:red"> I have verified the contrapositive of the conjecture for all pairs of non-isomorphic graphs on upto 10 vertices which is roughly <span class="math inline">\(1,229,2182\)</span> many graphs </span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. It seems like for small number of vertices, the condition does determine all graphs upto isomorphism. Right now, I am interested in special classes of graphs such as trees and regular graphs.</p>
+<p><strong><em>Conjecture 1.1:</em></strong> (False) <em>Let <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> be simple graphs, and <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix <span class="math inline">\(\pi\)</span> such that for all <span class="math inline">\(k\geq 0\)</span> such that <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)\]</span> Then <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are isomorphic.</em></p>
+<p><em>Lemma 1.2</em> tells us that we only needs to check for <span class="math inline">\(2\leq k \leq n\)</span> and with <em>Lemma 1.3</em> we have that it is enough to require <span class="math inline">\(\pi = I\)</span> for all <span class="math inline">\(k\)</span>.</p>
 </section>
 <section id="appendix" class="level2">
 <h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
@@ -172,16 +160,7 @@ text-align: justify}
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>An algorithm that takes <span class="math inline">\(O(n^k)\)</span> time to run where <span class="math inline">\(n\)</span> is the size of the input and <span class="math inline">\(k\)</span> is a positive constant.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>The run time of the operation is independent of the size of input.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>In practical terms, on an <span class="math inline">\(O(n^5)\)</span> algorithm, if <span class="math inline">\(n\)</span> doubles, the amount of time it takes to solve the problem is <span class="math inline">\(2^5 = 32\)</span> times in proportion. On an <span class="math inline">\(2^{((O\log n)^3)}\)</span> algorithm the growth is quasi-polynomial. Meaning for <span class="math inline">\(n=10,100,1000\)</span>, it respectively takes <span class="math inline">\(2^7 = 128\)</span> and <span class="math inline">\(2^{19}\)</span> times longer than the former.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Due to a coding error, my algorithm was unable to detect counterexamples on <span class="math inline">\(n=10\)</span> vertices. This statement is no longer true following the fix.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
