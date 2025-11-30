@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sajid Bin Mahamud">
+<meta name="dcterms.date" content="2025-11-30">
+
+<title>FavoriteHWProblems - Sylvester’s Four Point Problem</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  </head><body class="nav-fixed fullcontent">true
+
+<link rel="stylesheet" href="../../styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">FavoriteHWProblems</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Sylvester’s Four Point Problem</h1>
+            <p class="subtitle lead">Introduction to Crofton’s Formula in Geometric Probability</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Geometric Probability</div>
+                <div class="quarto-category">Integral Geometry</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Sajid Bin Mahamud </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 30, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><span class="math display">\[
+\newcommand{\kbar}{\mathchar'26\mkern-9mu k}
+\newcommand{\ebar}{\mathchar'26\mkern-9mu \theta_0}
+\newcommand{\ebarblue}{\mathchar'26\mkern-9mu \textcolor{blue}{\theta_0}}
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\R}{\mathbb{R}}
+\DeclareMathOperator*{\N}{\mathbb{N}}
+\DeclareMathOperator*{\Q}{\mathbb{Q}}
+\DeclareMathOperator*{\Var}{\textnormal{Var}}
+\DeclareMathOperator*{\Area}{\textnormal{Area}}
+\DeclareMathOperator*{\Cov}{\textnormal{Cov}}
+\DeclareMathOperator*{\Conv}{\textnormal{Conv}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
+\DeclareMathOperator*{\Zp}{{\mathbb{Z}}^+}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator*{\C}{\mathbb{C}}
+\DeclareMathOperator*{\A}{\mathbb{A}}
+\DeclareMathOperator*{\expp}{\text{exp}}
+\DeclareMathOperator*{\lt}{L_{\bullet}}
+\DeclareMathOperator*{\roc}{\rotatebox[origin=c]{180}{c}}
+\DeclareMathOperator*{\rok}{\rotatebox[origin=c]{180}{$k$}}
+\DeclareMathOperator*{\boldv}{\boldsymbol{v}}
+\DeclareMathOperator*{\hbarbrown}{\textcolor{brown}{\hbar}}
+\DeclareMathOperator*{\e}{\textcolor{purple}{\theta_0_1}}
+\DeclareMathOperator*{\ee}{\textcolor{purple}{\theta_0_2}}
+\DeclareMathOperator*{\ered}{\textcolor{red}{--\theta_0_1 \theta_0_2}}
+\DeclareMathOperator*{\eblue}{\textcolor{blue}{\theta_0_1 + \theta_0_2}}
+\DeclareMathOperator*{\eebrown}{\textcolor{brown}{-- \theta_0}}
+\DeclareMathOperator*{\ebrown}{\textcolor{brown}{\theta_0}}
+\DeclareMathOperator*{\eebrownlevel}{\textcolor{brown}{\theta_0^2}}
+\DeclareMathOperator*{\tealN}{\textit{\textcolor{teal}{N}}}
+\DeclareMathOperator*{\bluenoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\pinknoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\uniform}{\boldsymbol{\rho}_{\star | \mathbb{T}}}
+\DeclareMathOperator*{\vcurrent}{\widehat{\textit{\textbf{v}}}}
+\newcommand{\dbar}{\mathchar'26\mkern-9mu \theta_0}
+\]</span></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>James Joseph Sylvester posed the following problem in the Educational times of <span class="math inline">\(1864\)</span>:</p>
+<blockquote class="blockquote">
+<p><strong>Problem</strong></p>
+<p>Show that the chance of four points forming the apices of a reentrant quadrilateral is <span class="math inline">\(\frac{1}{4}\)</span> if they be taken at random in an indefinite plane, but <span class="math inline">\(\frac{1}{4}+e^2 + x^2\)</span>, where <span class="math inline">\(e\)</span> is a finite constant and <span class="math inline">\(x\)</span> is a variable quantity, if they be limited by an area of any magnitude and of any form.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="retrant.jpeg" class="img-fluid figure-img" style="width:8cm"></p>
+<figcaption class="figure-caption">Retrant Quadrilateral</figcaption>
+</figure>
+</div>
+<p>In simple terms, part (1) of problem asks us to show that the probability of the event that four points sampled uniformly randomly on the infinite plane forms a concave quadrilateral is <span class="math inline">\(\frac{1}{4}\)</span>. Part (2) asks for the probability in any region of bounded area. The problem, posed in the late nineteenth century, predates the invention of measure theoretic formulation of probability. As a result, the fact that ‘points taken at random in an indefinite plane’ is undefined evaded even the great J.J. Sylvester.</p>
+<blockquote class="blockquote">
+<p><strong>Definition</strong></p>
+<p>A set of point <span class="math inline">\(K \subset \R^d\)</span> is convex if it contains the line segments connecting any pair of points within <span class="math inline">\(K\)</span>. The convex hull of set <span class="math inline">\(K\)</span>, denoted by <span class="math inline">\(\Conv(K)\)</span> is the unique minimal convex set that contains <span class="math inline">\(K\)</span>.</p>
+</blockquote>
+<p>On a later issue of the Education times, Sylvester noted, “this problem does not admit of a determinate solution” and modified the question. Which, in modern terminology, translates to:</p>
+<blockquote class="blockquote">
+<p><strong>Problem</strong></p>
+<p>Find the probability of the event where the convex hull of four randomly distributed points on any region <span class="math inline">\(K\)</span> of the plane is a triangle.</p>
+</blockquote>
+<p>In this paper, I investigate the problem when <span class="math inline">\(K\)</span> is a disk of radius <span class="math inline">\(r\)</span>, <span class="math inline">\(D_r\)</span>. At first, I will attempt the problem with techniques from class and, hopefully, demonstrate that we need tools outside traditional probability theory to solve the problem reasonably.</p>
+</section>
+<section id="calculation-brute-force" class="level2">
+<h2 class="anchored" data-anchor-id="calculation-brute-force">Calculation: Brute Force</h2>
+<p>Let <span class="math inline">\(D_r\)</span> be a disk of radius <span class="math inline">\(r&gt;0\)</span>. Sample four random points from the disk <span class="math inline">\(D_r\)</span>: <span class="math display">\[M,N,P,Q \sim \textnormal{Unif}(D_r)\]</span> We have to find the probability of the event where one of the four points is contained in the triangle formed by the remaining three. The event is given by the union of four similar events: <span class="math display">\[E = [M \in \Delta(N,Q,P)] \vee [N \in \Delta(M,P,Q)] \vee [Q \in \Delta(M,N,P)] \vee [P \in \Delta(M,N,Q)]\]</span> These events are mutually exclusive. The proof follows from the fact that only one point can be contained inside the triangle formed by the rest at any given time. It follows from symmetry that all the events have equal probability. As a result, for simplicity, we can write: <span class="math display">\[ Pr[E] = 4Pr[Q \in \Delta(M,N,P)] \]</span></p>
+<p>Now note that computing <span class="math inline">\(Pr[Q \in \Delta(M,N,P)]\)</span> is the same as computing the ratio of <span class="math inline">\(\Area \Delta(M,N,P)\)</span> to <span class="math inline">\(\Area(D_r)\)</span>. This follows from the following observation: <span class="math inline">\(Q\)</span> is either contained in <span class="math inline">\(\Delta(M,N,P)\)</span> or contained in its complement <span class="math inline">\(D_r - \Delta(M,N,P)\)</span>. As a result, we get: <span class="math display">\[ Pr[E] =  \frac{4\E[\Area(M,N,P)]}{\Area(D_r)}\]</span></p>
+<p>We know <span class="math inline">\(\Area(D_r) = \pi r^2\)</span>. Then the problem boils down to finding the expected area of <span class="math inline">\(\Area\Delta (M,N,P) = \Area(M,N,P)\)</span>. The integral we have to evaluate: <span class="math display">\[ \E[\Area(M,N,P)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \Area(m,n,p) ~f_{M, N, P}(m, n, p) ~dm~dn~dp \]</span></p>
+<p>This is not as bad as it looks when you assume that <span class="math inline">\(r = 1\)</span>. Because we’ve assumed <span class="math display">\[M,N,P \sim \textnormal{Unif}(D_1)\]</span></p>
+<p>We can define the joint probability density function to be: <span class="math display">\[ f_{M,N,P}(m,n,p) = \begin{cases}
+\frac{1}{\pi^3} &amp;\text{ when } (m,n,p) \in D_1\\
+0 &amp;\text{ when } (m,n,p) \not \in D_1
+\end{cases} \]</span></p>
+<p>Now let <span class="math display">\[ m = (x_1,y_1), ~n = (x_2, y_2), ~p = (x_3,y_3) \]</span></p>
+<p>We can then use the shoelace formula to compute: <span class="math display">\[\begin{align*}
+\Area(m,n,p) &amp;=\frac{1}{2} \left| \det \begin{bmatrix}
+1&amp;1&amp;1\\
+x_1&amp;x_2&amp;x_3\\
+y_1&amp;y_2&amp;y_3
+\end{bmatrix} \right|
+\end{align*}\]</span></p>
+<p>Now, assume that <span class="math inline">\(D_1\)</span> is a disk of radius <span class="math inline">\(1\)</span> centered at the origin, so that we can use polar coordinates: <span class="math display">\[ m = (x_1,y_1) = (\sqrt{r_1}\cos \theta_1, \sqrt{r_1}\sin \theta_1) \]</span> <span class="math display">\[ n = (x_2,y_2) = (\sqrt{r_2}\cos \theta_2, \sqrt{r_2} \sin \theta_2) \]</span> <span class="math display">\[p = (x_3,y_3)  = (\sqrt{r_3} \cos \theta_3, \sqrt{r_3} \sin \theta_3)\]</span></p>
+<p>Then: <span class="math display">\[\begin{align*}
+\Area(m,n,p) &amp;= \frac{1}{2} \left|  \det \begin{bmatrix}
+1&amp;1&amp;1\\
+\sqrt{r_1} \cos \theta_1&amp;\sqrt{r_2} \cos \theta_2&amp;\sqrt{r_3} \cos \theta_3\\
+\sqrt{r_1} \sin \theta_1&amp;\sqrt{r_2} \sin \theta_2&amp;\sqrt{r_3} \sin \theta_3
+\end{bmatrix} \right|
+\end{align*}\]</span></p>
+<p>Recall the trig identity: <span class="math display">\[ \sin(\alpha-\beta) = \sin \alpha \cos \beta - \cos \alpha sin \beta \]</span></p>
+<p>We can further simplify:</p>
+<p><span class="math display">\[\begin{align*}
+\Area(m,n,p) &amp;= \frac{1}{2}\left|  \sqrt{r_1r_3 }\sin(\theta_1 - \theta_3) + \sqrt{r_1r_2} \sin(\theta_2 - \theta_1) + \sqrt{r_2r_3} \sin(\theta_3 - \theta_2) \right|
+\end{align*}\]</span></p>
+<p>We can further specify what the joint pdf looks like: <span class="math display">\[\begin{align*}
+&amp;f_{M,N,P}(r_1,r_2, r_3, \theta_1, \theta_2, \theta_3)\\ &amp;= \begin{cases}
+\frac{1}{\pi^3} &amp;\text{ when } (\sqrt{r_1},\sqrt{r_2}, \sqrt{r_3}) \in [0,1]^3 \text{ and } (\theta_1, \theta_2, \theta_3) \in [0,2\pi]^3 \\
+0 &amp;\text{ otherwise }
+\end{cases}
+\end{align*}\]</span> Now, let’s write the full integral: <span class="math display">\[\begin{align*}
+&amp;\E[\Area(M,N,P)] \\
+&amp;= \frac{1}{\pi^3} \int_{[0,2\pi]} \int_{[0,2\pi]} \int_{[0,2\pi]} \int_{[0,1]} \int_{[0,1]} \int_{[0,1]} \Area(m,n,p) ~dr_1 ~dr_2 ~dr_3 ~d \theta_1~d \theta_2 ~d \theta_3\\
+&amp;= \frac{1}{\pi^3} \int_{[0,2\pi]^3}  \int_{[0,1]^3}  \Area(r_1,r_2, r_3, \theta_1, \theta_2, \theta_3) ~dr_1 ~dr_2 ~dr_3 ~d \theta_1~d \theta_2 ~d \theta_3\\
+&amp;=  \frac{1}{\pi^3} \int_{[0,2\pi]^3 \times [0,1]^3}  \frac{1}{2}\left| \sqrt{r_1r_3} \sin(\theta_1 - \theta_3) + \sqrt{r_1r_2} \sin(\theta_2 - \theta_1) + \sqrt{r_2r_3} \sin(\theta_3 - \theta_2) \right| ~dr_1 \cdots\end{align*}\]</span></p>
+<p>Evaluating this integral simply by adjusting the bounds of integration is going to be a nightmare. As a result, we need an important tool called <code>Crofton's Formula</code>, named after Morgan Crofton. I consider it to be a sin to throw formulas around without motivating them, so let’s first see where the formula comes from.</p>
+</section>
+<section id="croftons-formula" class="level2">
+<h2 class="anchored" data-anchor-id="croftons-formula">Crofton’s Formula</h2>
+<p>Let’s take things down by one notch. Instead of computing the area of a convex hull of three points in the unit disk, let’s compute the area of the convex hull of two points. That is, we want to find the expected length of a line segment drawn from a disk of radius <span class="math inline">\(1\)</span>. Let’s simplify the problem by considering a disk of radius <span class="math inline">\(r\)</span>. Let <span class="math inline">\(\vec{Q_1} = (x_1, y_1)\)</span> and <span class="math inline">\(\vec{Q_2} = (x_2, y_2)\)</span> be points sampled from a uniform distribution on the domain <span class="math inline">\(D_r = B_r(0,0)\)</span>, or a disk of radius <span class="math inline">\(r\)</span>: <span class="math display">\[ \vec{Q_1}, \vec{Q_2}  \sim \textnormal{Unif}(D_r)\]</span></p>
+<p>Take the convex hull of <span class="math inline">\(\vec{Q_1}\)</span> and <span class="math inline">\(\vec{Q_1}\)</span>: the line connecting points <span class="math inline">\((x_1, y_1)\)</span> and <span class="math inline">\((x_2, y_2)\)</span>: <span class="math display">\[ \Conv(\vec{Q_1}, \vec{Q_2}) = \vec{Q_1}(1-t)  + \vec{Q_2}t ~\text{ for } t \in [0,1] \]</span></p>
+<p>Our aim is to find the expected area of <span class="math inline">\(\Conv(\vec{Q_1}, \vec{Q_2})\)</span> or the length in this case:</p>
+<p><span class="math display">\[\mathbb{E}_{r}[\Area(\Conv(\vec{Q_1}, \vec{Q_2}))] =\mathbb{E}_{r} [|\vec{Q_1}- \vec{Q_2}|]\]</span> Consider a new domain <span class="math inline">\(D_{r+h}\)</span>, a disk of radius <span class="math inline">\(r+h\)</span>. Like before, sample points from the domain: <span class="math display">\[ \vec{Q_1}, \vec{Q_2}  \sim  \textnormal{Unif}(D_{r+h}) \]</span> One can ask what is the relationship between the expected areas of points sampled from the domains: <span class="math inline">\(D_r\)</span> and <span class="math inline">\(D_{r+h}\)</span>.</p>
+<p><img src="concentric.jpeg" class="img-fluid" style="width:8cm"></p>
+<p>We first compute the joint probability of the points in the bigger domain, <span class="math inline">\(D_{r+h}\)</span>: <span class="math display">\[ P_{r+h}(\vec{Q_1}, \vec{Q_2})  = \begin{cases}
+\left( \frac{\pi r^2}{\pi (r+h)^2} \right)^2 &amp;\text{ when } \vec{Q_1}, \vec{Q_2} \in D_r\\
+\left( \frac{\pi r^2}{\pi (r+h)^2} \right) \left(1- \frac{ \pi r^2}{\pi(r+h)^2} \right) &amp;\text{ when } \vec{Q_1} \in D_{r+h} -D_{r}, ~\vec{Q_2} \in D_r\\
+\left( \frac{\pi r^2}{\pi (r+h)^2} \right)
+\left(1- \frac{ \pi r^2}{\pi(r+h)^2} \right) &amp;\text{ when } \vec{Q_2} \in D_{r+h} -D_{r}, ~\vec{Q_1} \in D_r\\
+\left( 1- \frac{ \pi r^2}{\pi(r+h)^2} \right)^2 &amp;\text{ when } \vec{Q_1},\vec{Q_2}  \in D_{r+h} -D_{r}
+\end{cases}  \]</span></p>
+<p>Now consider the case when <span class="math inline">\(\vec{Q_1}, \vec{Q_2} \in D_r\)</span>: <span class="math display">\[\begin{align*}
+P_{r+h}(\vec{Q_1}, \vec{Q_2}) &amp;= \left( \frac{\pi r^2}{\pi (r+h)^2} \right)^2\\
+&amp;=  \left(\frac{r^4}{r^4+ 4r^3h + 6r^2h^2 + 4rh^3+h^4}\right)\\
+&amp;=    \left( \frac{1}{1+ \frac{4h}{r} + \frac{6h^2}{r^2} + \frac{4h^3}{r^3} + \frac{h^4}{r^4}} \right)\\
+&amp;=  \left( \frac{1}{1+ 4\frac{h}{r} + 6\frac{h^2}{r^2} + 4\frac{h^3}{r^3} + \frac{h^4}{r^4}} \right)\\
+&amp;=  \frac{1}{ \left( 1+ 4\frac{h}{r} + 6\frac{h^2}{r^2} + 4\frac{h^3}{r^3} + \frac{h^4}{r^4} \right)} \\
+&amp;= \frac{1}{ \left( 1+ \frac{4h}{r}  +  \frac{6h^2}{r^2} + \frac{4h^3}{r^3} + \frac{h^4}{r^4} \right)} \\
+\end{align*}\]</span> From now onwards, assume that <span class="math inline">\(|h|&lt;&lt; r\)</span>. Then we can use the power series expansion to get: <span class="math display">\[P_{r+h}(\vec{Q_1}, \vec{Q_2})  = 1- \frac{4h}{r} + o(h) \]</span></p>
+<p>We can similarly compute the probability one of the points is contained inside <span class="math inline">\(D_r\)</span> and the other in <span class="math inline">\(D_{r+h}- D_r\)</span>: <span class="math display">\[\begin{align*}
+P_{r+h}(\vec{Q_i} \in D_r, \vec{Q_j} \in D_{r+h}- D_r) &amp;=2 \left( \frac{\pi r^2}{\pi (r+h)^2} \right) \left(1- \frac{ \pi r^2}{\pi(r+h)^2} \right) \\ &amp;=2 \left( \frac{ r^2}{ (r+h)^2} \right) \left(1- \frac{ r^2}{(r+h)^2} \right) \\ &amp;= 2 \left( \frac{ r^2}{r^2 (1+\frac{h}{r})^2} \right) \left(1- \frac{ r^2}{r^2(1+\frac{h}{r})^2} \right) \\ &amp;= 2 \left( \frac{ 1}{ (1+\frac{h}{r})^2} \right) \left(1- \frac{ 1}{(1+\frac{h}{r})^2} \right) \\ \end{align*}\]</span> Using binomial approximation with <span class="math inline">\(|\frac{2h}{r}|&lt;&lt;r\)</span> and power series expansion, we get: <span class="math display">\[\begin{align*}
+P_{r+h}(\vec{Q_i} \in D_r, \vec{Q_j} \in D_{r+h}- D_r) &amp;\approx  \left( \frac{ 2}{ 1+\frac{2h}{r}} \right) \left(1- \frac{ 1}{1+\frac{2h}{r}} \right)\\ &amp;\approx 2 \left(1- \frac{2h}{r} \right) \cdot \frac{2h}{r} \\
+&amp;= \frac{4h}{r} + o(h) \end{align*}\]</span></p>
+<p>Lastly, compute the probability that both the points are in <span class="math inline">\(D_{r+h}-D_r\)</span>: <span class="math display">\[\begin{align*}
+P_{r+h}(\vec{Q_1}, \vec{Q_2} \in D_{r+h}- D_r) &amp;= \left(1- \frac{ \pi r^2}{\pi(r+h)^2} \right)^2 \\
+&amp;\approx  \left(1- \frac{ 1}{1+\frac{2h}{r}} \right)^2\\
+&amp;\approx \left( \frac{2h}{r} \right)^2\\
+&amp;= o(h)
+\end{align*}\]</span></p>
+<p>Now, recall that our original ambition was to compute <span class="math display">\[\mathbb{E}_{r}[\Area(\Conv(\vec{Q_1}, \vec{Q_2}))] =\mathbb{E}_{r}[ |\vec{Q_1}- \vec{Q_2}|]\]</span></p>
+<p>Denote <span class="math inline">\(P_{r+h} = P\)</span>. Then, using conditional expectation, one can show that <span class="math display">\[\begin{align*}
+&amp;\mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \text{ given } \vec{Q_1}, \vec{Q_2} \in D_{r+h}] \\&amp;= P\left(\vec{Q_1}, \vec{Q_2} \in D_{r}\right) \cdot  \mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \text{ given } \vec{Q_1}, \vec{Q_2} \in D_{r}] \\ &amp;+P \left( \vec{Q_1} \in D_{r}, \vec{Q_2} \in D_{r+h} - D_r\right) \cdot 2 \mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \text{ given }  \vec{Q_1} \in D_{r} , \vec{Q_2} \in D_{r+h} - D_{r}]  \\ &amp;+ P\left( \vec{Q_1}, \vec{Q_2} \in D_{r+h} - D_{r} \right) \mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \text{ given } \vec{Q_1}, \vec{Q_2} \in D_{r+h} - D_{r}]
+\end{align*}\]</span></p>
+<p>This is becoming cumbersome, so let’s take <span class="math inline">\(\vec{Q_1}, \vec{Q_2}\)</span> to be implicit: <span class="math display">\[\begin{align*}
+&amp;=\mathbb{E}[ \text{ length } | ~ D_{r+h}] \\&amp;= P\left( D_{r}\right) \cdot  \mathbb{E}[  \text{ length } | ~ D_{r}] \\ &amp;+2 P \left( D_{r}, D_{r+h} - D_r\right) \cdot \mathbb{E}[ \text{ length } | ~  D_{r} , D_{r+h} - D_{r}]  \\ &amp;+ P\left(  D_{r+h} - D_{r} \right) \cdot \mathbb{E}[  \text{ length } | ~ D_{r+h} - D_{r}]\\
+\end{align*}\]</span></p>
+<p>Take length to be implicit and plug in values from before: <span class="math display">\[\begin{align*}
+\mathbb{E}[  D_{r+h}] &amp;= \left( 1- \frac{4h}{r} \right)\mathbb{E}[  D_{r}] + \frac{4h}{r}~\mathbb{E}[ D_r, \left(D_{r+h} - D_{r}\right)]\\
+\mathbb{E}[  D_{r+h}] - \mathbb{E}[  D_{r}] &amp;= \frac{4h}{r} \left( \mathbb{E}[ D_r, \left(D_{r+h} - D_{r}\right)] - \mathbb{E}[  D_{r}]   \right)\\
+\frac{\mathbb{E}[  D_{r+h}] - \mathbb{E}[  D_{r}]}{h}&amp;= \frac{4}{r} ~\mathbb{E}[ D_r, \left(D_{r+h} - D_{r}\right)] - \frac{4}{r}~ \mathbb{E}[  D_{r}]
+\end{align*}\]</span> Taking the limit as <span class="math inline">\(h \to 0\)</span>, we get: <span class="math display">\[ \mathbb{E}'[D_r] = \frac{4}{r} ~\mathbb{E}[ D_r, \left(D_{r} - D_{r}\right)] - \frac{4}{r}~ \mathbb{E}[  D_{r}]
+\]</span> We need to be careful about taking the limits on the right hand side. Consider the first term of the summand: <span class="math inline">\(\mathbb{E}[ \text{ length } | ~ \vec{Q_i} \in D_r, \vec{Q_j} \in D_{r+h} - D_{r}]\)</span>. As <span class="math inline">\(h \to 0\)</span>, the domain <span class="math inline">\(D_{r+h} - D_r\)</span> collapses to <span class="math inline">\(C_r\)</span>, the boundary of the disk <span class="math inline">\(D_r\)</span>. As a result: <span class="math display">\[ \lim_{h \to 0}  \mathbb{E}[  \text{ length } | ~   \vec{Q_i} \in  D_r, \vec{Q_j} \in D_{r+h} - D_{r}] = \mathbb{E}[  \text{ length } | ~   \vec{Q_i} \in  D_r, \vec{Q_j} \in C_r]\]</span></p>
+<p>Meaning, limit of the expected length of points exclusively sampled from <span class="math inline">\(D_r\)</span> and <span class="math inline">\(D_{r+h} - D_r\)</span> approaches the expected length for when one of the points is sampled from <span class="math inline">\(D_r\)</span> and the other from its boundary <span class="math inline">\(C_r\)</span>, as <span class="math inline">\(h \to 0\)</span>.</p>
+<p>Rewrite to get Crofton’s formula for a convex domain with two randomly sampled points: <span class="math display">\[ \mathbb{E}'[\text{ length } | D_{r}] = \frac{4}{r} ~\mathbb{E}[ \text{ length } | D_r, C_r] - \frac{4}{r}~ \mathbb{E}[ \text{ length } | D_{r}]
+\]</span></p>
+<p>Let’s try to unpack here. The equation says that the rate of change of expected length when both points are sampled from <span class="math inline">\(D_r\)</span>, can be expressed as a sum of two expected lengths: (1) expected length when one point is sampled from the circumference and the other from the interior, and (2) both points are sampled from the interior, weighted by constants dependent on <span class="math inline">\(r\)</span>. We make an important remark here.</p>
+<blockquote class="blockquote">
+<p><strong>Remark</strong></p>
+<p>The expected length of the line segment <span class="math inline">\(\ell(\vec{Q_1}, \vec{Q_2})\)</span>, is a function of the radius <span class="math inline">\(r\)</span>: <span class="math display">\[ \E[|\vec{Q_1}- \vec{Q_2}|] = \mathbb{E}[ \textnormal{ length } | D_{r}]= kr \]</span> for some constant <span class="math inline">\(k\)</span>.</p>
+</blockquote>
+<p>This follows from simple observation about Euclidean distance. Say two points <span class="math inline">\(\vec{Q_1},\vec{Q_2}\)</span> sampled from a unit disk <span class="math inline">\(D_1\)</span> are <span class="math inline">\(k\)</span>-unit away from each other: <span class="math display">\[|\vec{Q_1}- \vec{Q_2}| = k  \]</span> If we now enlarge the disk to have radius <span class="math inline">\(r\)</span>, then, for the linearly transformed points <span class="math inline">\(\vec{Q_1'}, \vec{Q_2'}\)</span> now sampled from the bigger disk, <span class="math inline">\(D_r\)</span> we have: <span class="math display">\[|\vec{Q_1'}- \vec{Q_2'}| =r |\vec{Q_1}- \vec{Q_2}| =kr  \]</span> Since expectation is linear, we know <span class="math display">\[ \E[|\vec{Q_1'}- \vec{Q_2'}|] = \E[k|\vec{Q_1}- \vec{Q_2}|] = k \E[|\vec{Q_1}- \vec{Q_2}| \]</span></p>
+<p>I mention this because this tell us that rate of change of expected length should be a constant: <span class="math display">\[ \mathbb{E}'[ \textnormal{ length } | D_{r}]= k  \]</span> This observation simplifies Crofton’s formula into:</p>
+<p><span class="math display">\[ kr = \frac{4}{r} ~\mathbb{E}[ \text{ length } | D_r, C_r] - \frac{4}{r}~ kr
+\]</span></p>
+<p>We have one remaining expected to compute which is relatively simpler: <span class="math display">\[\begin{align*}
+\mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \textnormal{ given } \vec{Q_1} \in  D_r, \vec{Q_2} \in C_r]
+\end{align*}\]</span></p>
+<p>Note that due to the symmetry of the circumference, we can fix <span class="math inline">\(\vec{Q_2}\)</span> at the origin: <span class="math inline">\(\vec{Q_2} = (0,0)\)</span>.</p>
+<p><img src="integration.jpeg" class="img-fluid" style="width:15cm"></p>
+<p>Then: <span class="math display">\[\begin{align*}
+\mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \textnormal{ given } \vec{Q_1} \in  D_r, \vec{Q_2} =(0,0)] &amp;= \int_{D_r} \sqrt{x_2^2+ y_2^2} ~f_{\vec{Q_1}}
+\end{align*}\]</span> Here <span class="math inline">\(f_{\vec{Q_1}}\)</span> is simply the probability distribution function of <span class="math inline">\(\vec{Q_1}\)</span> which we know equals the inverse of the area of <span class="math inline">\(D_r\)</span>. <span class="math display">\[\begin{align*}
+\mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \textnormal{ given } \vec{Q_1} \in  D_r, \vec{Q_2} =(0,0)] &amp;= \frac{1}{\Area(D_r)} \int_{D_r} \sqrt{x_2^2+ y_2^2}
+\end{align*}\]</span> We can parametrize <span class="math inline">\(\vec{Q_2}\)</span> as a function of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\theta\)</span> where $= $ where <span class="math inline">\(\theta = [-\frac{\pi}{2}, \frac{\pi}{2}]\)</span>. From the picture above, we see that as <span class="math inline">\(\mu \in [0, 2R\cos(\theta)]\)</span>. As a result, we get: <span class="math display">\[\begin{align*}
+\mathbb{E}[ |\vec{Q_1}- \vec{Q_2}| \textnormal{ given } \vec{Q_1} \in  D_r, \vec{Q_2} =(0,0)] &amp;= \frac{1}{\pi r^2} \int_{-\pi/2}^{\pi/2} \int_{0}^{2R\cos(\theta)} \mu ~d\mu  ~d\theta\\
+&amp;= \frac{32r}{9\pi}
+\end{align*}\]</span> Plugging into Crofton’s formula, we get: <span class="math display">\[\begin{align*}
+kr &amp;= \frac{4}{r} \cdot \frac{32r}{9\pi} - \frac{4}{r}~ kr\\
+k&amp;= \frac{128}{45\pi}
+\end{align*}\]</span></p>
+<p>Recall the remark we made on the last page:</p>
+<p><span class="math display">\[ \E[|\vec{Q_1}- \vec{Q_2}|] = \mathbb{E}[ \textnormal{ length } | D_{r}]= kr \]</span></p>
+<p>Setting <span class="math inline">\(r=1\)</span>, we get:</p>
+<p><span class="math display">\[ \E[|\vec{Q_1}- \vec{Q_2}|] = \mathbb{E}[ \textnormal{ length } | D_{1}]= k \]</span></p>
+<p>So we have successfully computed the expected length of a line drawn from the unit disk at random.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The nice thing about Crofton’s formula is that it generalizes for any convex set <span class="math inline">\(K\)</span>, and <span class="math inline">\(n\)</span> uniformly, randomly chosen points from <span class="math inline">\(K\)</span>. We can then use a similar approach to find the expected area of a triangle whose vertices are sampled uniformly, randomly from the unit disk: <span class="math display">\[\begin{align*}
+\E[\Area(\Delta)\textnormal{ given that } \Delta \in D_1]  &amp;= \frac{35}{48\pi}
+\end{align*}\]</span> The computation becomes slightly involved so I will leave it as an exercise for the reader. As a result, we know that the probability of the event where the convex hull of four randomly distributed points on a unit disk is a triangle, denoted by <span class="math inline">\(E\)</span> is: <span class="math display">\[ P(E) = \frac{4\E[\Area(\Delta)]}{\pi} = \frac{35}{12\pi^2} \]</span> I like the result because its considered to be one of the earliest works in the world of geometric probability. Nice extensions to the problem can be found in the references below.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

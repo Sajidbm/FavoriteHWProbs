@@ -9,7 +9,7 @@
 <meta name="author" content="Sajid Bin Mahamud">
 <meta name="dcterms.date" content="2024-06-27">
 
-<title>FavoriteHWProblems - One Extra Pull Up for Every Cocylic Graph</title>
+<title>FavoriteHWProblems - One Extra Pull Up for Every Counterexample</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">One Extra Pull Up for Every Cocylic Graph</h1>
+      <h1 class="title">One Extra Pull Up for Every Counterexample</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Graph Theory</div>
                 <div class="quarto-category">Linear Algebra</div>
@@ -147,14 +147,37 @@ text-align: justify}
 <p>On my <a href="https://sajidbm.github.io/FavoriteHWProbs/posts/Summer-2024/">previous post</a>, I claimed that upto <span class="math inline">\(10\)</span> vertices, the <em>conjecture 1.1</em> holds true. For better or worse, the claim isn’t true. It turns out due to a classfication error (more on this later), I was unable to detect graphs that does disprove <em>conjecture 1.1</em>. With graphs found through the new algorithm, I have shown that <em>conjecture 1.1</em> is false.</p>
 <section id="housekeeping" class="level2">
 <h2 class="anchored" data-anchor-id="housekeeping">Housekeeping</h2>
-<p><a href="https://math.aalto.fi/~noferiv1/">Dr.&nbsp;Vanni Noferini</a> and I are working on a graph theory project at Aalto University in Finland. I will first state the conjecture we have been working on.</p>
+<p><a href="https://math.aalto.fi/~noferiv1/">Dr.&nbsp;Vanni Noferini</a> and I are working on a graph theory project at Aalto University in Finland. I will first restate the conjecture we have been working on.</p>
 <p>Let <span class="math inline">\(A \in M_{n\times n}(\mathbb{R})\)</span>. Define <span class="math display">\[\mathrm{diag}(A): M_{n\times n} \to M_{n \times 1} \text{ where } \mathrm{diag}(A) = \{a_{ii}\}_{i=1}^{n}\]</span></p>
 <p><strong><em>Conjecture 1.1:</em></strong> (False) <em>Let <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> be simple graphs, and <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix <span class="math inline">\(\pi\)</span> such that for all <span class="math inline">\(k\geq 0\)</span> such that <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)\]</span> Then <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are isomorphic.</em></p>
-<p><em>Lemma 1.2</em> tells us that we only needs to check for <span class="math inline">\(2\leq k \leq n\)</span> and with <em>Lemma 1.3</em> we have that it is enough to require <span class="math inline">\(\pi = I\)</span> for all <span class="math inline">\(k\)</span>.</p>
+<p><em>Lemma 1.2</em> tells us that we only needs to check for <span class="math inline">\(1\leq k \leq n\)</span> and with <em>Lemma 1.3</em> we have that it is enough to require <span class="math inline">\(\pi = I\)</span> for all <span class="math inline">\(k\)</span>.</p>
+</section>
+<section id="counter-examples" class="level2">
+<h2 class="anchored" data-anchor-id="counter-examples">Counter Examples</h2>
+<p>The counter examples to the <em>Conjecture 1.1</em> are a testament to the fact that despite two graphs having the same closed walks of all lengths, they might not be always isomorphic. This means that having complete knowledge of the closed walks of graphs alone does not determine its isomorphism class. This gives rise to this new class of graphs, which by my royal decree shall be named <em>closed walk defiant graphs</em> or CWDs.</p>
+<p>Expectedly, the number CWDs are quite small: only <span class="math inline">\(116\)</span> out of <span class="math inline">\(1,229,2182\)</span> non-isomorphic graphs on <span class="math inline">\(10\)</span> vertices. Based on my present computation, for <span class="math inline">\(11\)</span> vertices, only <span class="math inline">\(7738\)</span> out of <span class="math inline">\(1,018,997,864\)</span> graphs are CWDs. So naturally, I am inclined to find out what happens to the relative ratio of closed walk defiant graphs to their obedient counterparts.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="CWDs.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 2: Smallest pair of closed walk equivalent graphs</figcaption>
+</figure>
+</div>
+<p>You can find the graph6 format of all the CWDs I found <a href="https://drive.google.com/drive/folders/1zwHWlRQRbIH_zbz7XWBrzdTSEmxkUnPA?usp=sharing">here</a>.</p>
+</section>
+<section id="strongly-regular-graph-srg" class="level2">
+<h2 class="anchored" data-anchor-id="strongly-regular-graph-srg">Strongly Regular Graph (SRG)</h2>
+<p>Following my conversation with Andries E. Brouwer, I found that strongly regular graphs constitute another class of CWDs. A strongly regular graph is characterized by the parameters <span class="math inline">\((n, k, \mu, \lambda)\)</span> where <span class="math inline">\(n\)</span> is the number of vertices, <span class="math inline">\(k\)</span> is the degree of each vertex. To define <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\lambda\)</span>, let <span class="math inline">\(x_i, x_j\)</span> be rows (or columns) of the adjacency matrix <span class="math inline">\(A\)</span>. Then: <span class="math inline">\(\mu = \langle x_i, x_j \rangle\)</span> when <span class="math inline">\(i \not \sim j\)</span> or the vertices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are not adjacent, and <span class="math inline">\(\lambda = \langle x_i, x_j \rangle\)</span> when <span class="math inline">\(i \sim j\)</span> or <span class="math inline">\(i\)</span> is adjacent to <span class="math inline">\(j\)</span>. The first set of CWDs appear on <span class="math inline">\(16\)</span> vertices: <span class="math inline">\(G\)</span>,<span class="math inline">\(H\)</span> that are non-isomorphic graphs with the same strongly regular parameter <span class="math inline">\((n, k, \mu, \lambda)\)</span> and are closed walk equivalent graphs. Here the the first two strongly regular graphs that are closed walk defiant.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Merged_SRGs.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 2: Strongly Regular Graphs with parameters <span class="math inline">\((16, 6, 2, 2)\)</span></figcaption>
+</figure>
+</div>
+<p>This leads one to ask: how many are there - distinct SRGs with the same parameters.</p>
 </section>
 <section id="appendix" class="level2">
 <h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
-<p><strong><em>Lemma 1.2:</em></strong> Let <span class="math inline">\(A,B\)</span> be real symmetric. There exists a unique permutation matrix <span class="math inline">\(\pi\)</span> for all <span class="math inline">\(k\geq 0\)</span> such that <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)\]</span> if and only if <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k) ~~~(\star)\]</span> for <span class="math inline">\(0\leq k \leq n\)</span>.</p>
+<p><strong><em>Lemma 1.2:</em></strong> Let <span class="math inline">\(A,B\)</span> be real symmetric. There exists a fixed permutation matrix <span class="math inline">\(\pi\)</span> for all <span class="math inline">\(k\geq 0\)</span> such that <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)\]</span> if and only if <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k) ~~~(\star)\]</span> for <span class="math inline">\(1\leq k \leq n\)</span>.</p>
 <p><strong><em>Lemma 1.3:</em></strong> <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> satisfy the diagonal criteria if and only if <span class="math inline">\(\mathrm{diag}(M^k) = \mathrm{diag}(N^k)\)</span> where <span class="math inline">\(M,N\)</span> are permutation similar to <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively.</p>
 
 
