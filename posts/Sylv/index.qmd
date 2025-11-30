@@ -6,13 +6,10 @@ date: "2025-11-30"
 categories: [Geometric Probability, Integral Geometry]
 image: "retrant.jpeg"
 bibliography: references.bib
-format:
-  html:
-    math: true
+format: html
 ---
 
-$$
-\newcommand{\kbar}{\mathchar'26\mkern-9mu k}
+$$\newcommand{\kbar}{\mathchar'26\mkern-9mu k}
 \newcommand{\ebar}{\mathchar'26\mkern-9mu \theta_0}
 \newcommand{\ebarblue}{\mathchar'26\mkern-9mu \textcolor{blue}{\theta_0}}
 \DeclareMathOperator*{\lcm}{lcm}
@@ -46,32 +43,25 @@ $$
 \DeclareMathOperator*{\pinknoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
 \DeclareMathOperator*{\uniform}{\boldsymbol{\rho}_{\star | \mathbb{T}}}
 \DeclareMathOperator*{\vcurrent}{\widehat{\textit{\textbf{v}}}}
-\newcommand{\dbar}{\mathchar'26\mkern-9mu \theta_0}
-$$
+\newcommand{\dbar}{\mathchar'26\mkern-9mu \theta_0}$$
 
 ## Introduction
 
 James Joseph Sylvester posed the following problem in the Educational times of $1864$:
 
-> **Problem**
->
-> Show that the chance of four points forming the apices of a reentrant quadrilateral is $\frac{1}{4}$ if they be taken at random in an indefinite plane, but $\frac{1}{4}+e^2 + x^2$, where $e$ is a finite constant and $x$ is a variable quantity, if they be limited by an area of any magnitude and of any form.
+> **Problem**: Show that the chance of four points forming the apices of a reentrant quadrilateral is $\frac{1}{4}$ if they be taken at random in an indefinite plane, but $\frac{1}{4}+e^2 + x^2$, where $e$ is a finite constant and $x$ is a variable quantity, if they be limited by an area of any magnitude and of any form.
 
-![Retrant Quadrilateral](retrant.jpeg){width=8cm}
+![Retrant Quadrilateral](retrant.jpeg){width=70%}
 
 In simple terms, part (1) of problem asks us to show that the probability of the event that four points sampled uniformly randomly on the infinite plane forms a concave quadrilateral is $\frac{1}{4}$. Part (2) asks for the probability in any region of bounded area. The problem, posed in the late nineteenth century, predates the invention of measure theoretic formulation of probability. As a result, the fact that 'points taken at random in an indefinite plane' is undefined evaded even the great J.J. Sylvester.
 
-> **Definition**
->
-> A set of point $K \subset \R^d$ is convex if it contains the line segments connecting any pair of points within $K$. The convex hull of set $K$, denoted by $\Conv(K)$ is the unique minimal convex set that contains $K$.
+> **Definition**: A set of point $K \subset \R^d$ is convex if it contains the line segments connecting any pair of points within $K$. The convex hull of set $K$, denoted by $\Conv(K)$ is the unique minimal convex set that contains $K$.
 
 On a later issue of the Education times, Sylvester noted, "this problem does not admit of a determinate solution" and modified the question. Which, in modern terminology, translates to:
 
-> **Problem**
->
-> Find the probability of the event where the convex hull of four randomly distributed points on any region $K$ of the plane is a triangle.
+> **Problem**: Find the probability of the event where the convex hull of four randomly distributed points on any region $K$ of the plane is a triangle.
 
-In this paper, I investigate the problem when $K$ is a disk of radius $r$, $D_r$. At first, I will attempt the problem with techniques from class and, hopefully, demonstrate that we need tools outside traditional probability theory to solve the problem reasonably.
+In this post, I investigate the problem when $K$ is a disk of radius $r$, $D_r$. At first, I will attempt the problem with techniques from my probability class and, hopefully, demonstrate that we need tools outside traditional probability theory to solve the problem reasonably.
 
 ## Calculation: Brute Force
 
@@ -92,10 +82,10 @@ This is not as bad as it looks when you assume that $r = 1$. Because we've assum
 $$M,N,P \sim \textnormal{Unif}(D_1)$$
 
 We can define the joint probability density function to be:
-$$ f_{M,N,P}(m,n,p) = \begin{cases}
+$$f_{M,N,P}(m,n,p) = \begin{cases}
 \frac{1}{\pi^3} &\text{ when } (m,n,p) \in D_1\\
 0 &\text{ when } (m,n,p) \not \in D_1
-\end{cases} $$
+\end{cases}$$
 
 Now let
 $$ m = (x_1,y_1), ~n = (x_2, y_2), ~p = (x_3,y_3) $$
@@ -163,7 +153,7 @@ Consider a new domain $D_{r+h}$, a disk of radius $r+h$. Like before, sample poi
 $$ \vec{Q_1}, \vec{Q_2}  \sim  \textnormal{Unif}(D_{r+h}) $$
 One can ask what is the relationship between the expected areas of points sampled from the domains: $D_r$ and $D_{r+h}$.
 
-![](concentric.jpeg){width=8cm}
+![Concentric Disks](concentric.jpeg){width=70%}
 
 We first compute the joint probability of the points in the bigger domain, $D_{r+h}$:
 $$ P_{r+h}(\vec{Q_1}, \vec{Q_2})  = \begin{cases}
@@ -262,7 +252,7 @@ We have one remaining expected to compute which is relatively simpler:
 
 Note that due to the symmetry of the circumference, we can fix $\vec{Q_2}$ at the origin: $\vec{Q_2} = (0,0)$.
 
-![](integration.jpeg){width=15cm}
+![Integration](integration.jpeg){width=90%}
 
 Then:
 \begin{align*}

@@ -1,5 +1,5 @@
 ---
-title: "One Extra Pull Up for Every Cocylic Graph"
+title: "One Extra Pull Up for Every Counterexample"
 author: "Sajid Bin Mahamud"
 format: html
 date: "2024-06-27"
@@ -17,17 +17,37 @@ On my [previous post](https://sajidbm.github.io/FavoriteHWProbs/posts/Summer-202
 
 ## Housekeeping
 
-[Dr. Vanni Noferini](https://math.aalto.fi/~noferiv1/) and I are working on a graph theory project at Aalto University in Finland. I will first state the conjecture we have been working on. 
+[Dr. Vanni Noferini](https://math.aalto.fi/~noferiv1/) and I are working on a graph theory project at Aalto University in Finland. I will first restate the conjecture we have been working on. 
 
 Let $A \in M_{n\times n}(\mathbb{R})$. Define $$\mathrm{diag}(A): M_{n\times n} \to M_{n \times 1} \text{ where } \mathrm{diag}(A) = \{a_{ii}\}_{i=1}^{n}$$
 
 ***Conjecture 1.1:*** (False) *Let $G$ and $H$ be simple graphs, and $A$, $B$ be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix $\pi$ such that for all $k\geq 0$ such that $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)$$ Then $G$ and $H$ are isomorphic.*
 
-*Lemma 1.2* tells us that we only needs to check for $2\leq k \leq n$ and with *Lemma 1.3* we have that it is enough to require $\pi = I$ for all $k$. 
+*Lemma 1.2* tells us that we only needs to check for $1\leq k \leq n$ and with *Lemma 1.3* we have that it is enough to require $\pi = I$ for all $k$. 
+
+## Counter Examples 
+
+The counter examples to the *Conjecture 1.1* are a testament to the fact that despite two graphs having the same closed walks of all lengths, they might not be always isomorphic. This means that having complete knowledge of the closed walks of graphs alone does not determine its isomorphism class. This gives rise to this new class of graphs, which by my royal decree shall be named *closed walk defiant graphs* or CWDs.
+
+Expectedly, the number CWDs are quite small: only $116$ out of $1,229,2182$ non-isomorphic graphs on $10$ vertices. Based on my present computation, for $11$ vertices, only $7738$ out of $1,018,997,864$ graphs are CWDs. So naturally, I am inclined to find out what happens to the relative ratio of closed walk defiant graphs to their obedient counterparts. 
+
+![Figure 2: Smallest pair of closed walk equivalent graphs](CWDs.jpg)
+
+You can find the graph6 format of all the CWDs I found [here](https://drive.google.com/drive/folders/1zwHWlRQRbIH_zbz7XWBrzdTSEmxkUnPA?usp=sharing).  
+
+
+## Strongly Regular Graph (SRG)
+
+Following my conversation with Andries E. Brouwer, I found that strongly regular graphs constitute another class of CWDs. A strongly regular graph is characterized by the parameters $(n, k, \mu, \lambda)$ where $n$ is the number of vertices, $k$ is the degree of each vertex. To define $\mu$ and $\lambda$, let $x_i, x_j$ be rows (or columns) of the adjacency matrix $A$. Then: $\mu = \langle x_i, x_j \rangle$ when $i \not \sim j$ or the vertices $i$ and $j$ are not adjacent, and $\lambda = \langle x_i, x_j \rangle$  when $i \sim j$ or $i$ is adjacent to $j$. The first set of CWDs appear on $16$ vertices: $G$,$H$ that are non-isomorphic graphs with the same strongly regular parameter $(n, k, \mu, \lambda)$ and are closed walk equivalent graphs. Here the the first two strongly regular graphs that are closed walk defiant.
+
+![Figure 2: Strongly Regular Graphs with parameters $(16, 6, 2, 2)$](Merged_SRGs.png)
+
+
+This leads one to ask: how many are there - distinct SRGs with the same parameters. 
 
 
 ## Appendix 
-***Lemma 1.2:*** Let $A,B$ be real symmetric. There exists a unique permutation matrix $\pi$ for all $k\geq 0$ such that $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)$$ if and only if $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k) ~~~(\star)$$ for  $0\leq k \leq n$. 
+***Lemma 1.2:*** Let $A,B$ be real symmetric. There exists a fixed permutation matrix $\pi$ for all $k\geq 0$ such that $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)$$ if and only if $$\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k) ~~~(\star)$$ for  $1\leq k \leq n$. 
 
 ***Lemma 1.3:*** $A$ and $B$ satisfy the diagonal criteria if and only if $\mathrm{diag}(M^k) = \mathrm{diag}(N^k)$ where $M,N$ are permutation similar to $A$ and $B$ respectively. 
 
