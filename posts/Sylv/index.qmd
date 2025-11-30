@@ -2,7 +2,7 @@
 title: "Sylvester's Four Point Problem"
 subtitle: "Introduction to Crofton's Formula in Geometric Probability"
 author: "Sajid Bin Mahamud"
-date: "2025-11-30"
+date: "2024-12-17"
 categories: [Geometric Probability, Integral Geometry]
 image: "retrant.jpeg"
 bibliography: references.bib
