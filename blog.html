@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sajid Bin Mahamud">
-<meta name="dcterms.date" content="2024-06-27">
 
-<title>Personal Blog - One Extra Pull Up for Every Counterexample</title>
+<title>Personal Blog - Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,21 +61,50 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Personal Blog</span>
     </a>
   </div>
@@ -86,29 +115,29 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html" rel="" target="">
+    <a class="nav-link" href="./research.html" rel="" target="">
  <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
+    <a class="nav-link" href="./publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html" rel="" target="">
+    <a class="nav-link" href="./cv.html" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
+    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -121,91 +150,160 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">One Extra Pull Up for Every Counterexample</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Graph Theory</div>
-                <div class="quarto-category">Linear Algebra</div>
-                <div class="quarto-category">Summer 2024</div>
-              </div>
-                  </div>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Blog</h1>
+                      </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Sajid Bin Mahamud </p>
-            </div>
-    </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">June 27, 2024</p>
-      </div>
-    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Analytic Number Theory">Analytic Number Theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Geometric Probability">Geometric Probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Graph Theory">Graph Theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Integral Geometry">Integral Geometry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linear Algebra">Linear Algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Real Analysis">Real Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Summer 2024">Summer 2024 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
-<style>
-body {
-text-align: justify}
-</style>
-<p>On my <a href="https://sajidbm.github.io/FavoriteHWProbs/posts/Summer-2024/">previous post</a>, I claimed that upto <span class="math inline">\(10\)</span> vertices, the <em>conjecture 1.1</em> holds true. For better or worse, the claim isn’t true. It turns out due to a classfication error (more on this later), I was unable to detect graphs that does disprove <em>conjecture 1.1</em>. With graphs found through the new algorithm, I have shown that <em>conjecture 1.1</em> is false.</p>
-<section id="housekeeping" class="level2">
-<h2 class="anchored" data-anchor-id="housekeeping">Housekeeping</h2>
-<p><a href="https://math.aalto.fi/~noferiv1/">Dr.&nbsp;Vanni Noferini</a> and I are working on a graph theory project at Aalto University in Finland. I will first restate the conjecture we have been working on.</p>
-<p>Let <span class="math inline">\(A \in M_{n\times n}(\mathbb{R})\)</span>. Define <span class="math display">\[\mathrm{diag}(A): M_{n\times n} \to M_{n \times 1} \text{ where } \mathrm{diag}(A) = \{a_{ii}\}_{i=1}^{n}\]</span></p>
-<p><strong><em>Conjecture 1.1:</em></strong> (False) <em>Let <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> be simple graphs, and <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix <span class="math inline">\(\pi\)</span> such that for all <span class="math inline">\(k\geq 0\)</span> such that <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)\]</span> Then <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are isomorphic.</em></p>
-<p><em>Lemma 1.2</em> tells us that we only needs to check for <span class="math inline">\(1\leq k \leq n\)</span> and with <em>Lemma 1.3</em> we have that it is enough to require <span class="math inline">\(\pi = I\)</span> for all <span class="math inline">\(k\)</span>.</p>
-</section>
-<section id="counter-examples" class="level2">
-<h2 class="anchored" data-anchor-id="counter-examples">Counter Examples</h2>
-<p>The counter examples to the <em>Conjecture 1.1</em> are a testament to the fact that despite two graphs having the same closed walks of all lengths, they might not be always isomorphic. This means that having complete knowledge of the closed walks of graphs alone does not determine its isomorphism class. This gives rise to this new class of graphs, which by my royal decree shall be named <em>closed walk defiant graphs</em> or CWDs.</p>
-<p>Expectedly, the number CWDs are quite small: only <span class="math inline">\(116\)</span> out of <span class="math inline">\(1,229,2182\)</span> non-isomorphic graphs on <span class="math inline">\(10\)</span> vertices. Based on my present computation, for <span class="math inline">\(11\)</span> vertices, only <span class="math inline">\(7738\)</span> out of <span class="math inline">\(1,018,997,864\)</span> graphs are CWDs. So naturally, I am inclined to find out what happens to the relative ratio of closed walk defiant graphs to their obedient counterparts.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="CWDs.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 2: Smallest pair of closed walk equivalent graphs</figcaption>
-</figure>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Geometric Probability,Integral Geometry" data-listing-date-sort="1734422400000" data-listing-file-modified-sort="1765773774145" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="thumbnail">
+<p><a href="./posts/Sylv/index.html"> <img src="./posts/Sylv/retrant.jpeg" class="thumbnail-image"> </a></p>
 </div>
-<p>You can find the graph6 format of all the CWDs I found <a href="https://drive.google.com/drive/folders/1zwHWlRQRbIH_zbz7XWBrzdTSEmxkUnPA?usp=sharing">here</a>.</p>
-</section>
-<section id="strongly-regular-graph-srg" class="level2">
-<h2 class="anchored" data-anchor-id="strongly-regular-graph-srg">Strongly Regular Graph (SRG)</h2>
-<p>Following my conversation with Andries E. Brouwer, I found that strongly regular graphs constitute another class of CWDs. A strongly regular graph is characterized by the parameters <span class="math inline">\((n, k, \mu, \lambda)\)</span> where <span class="math inline">\(n\)</span> is the number of vertices, <span class="math inline">\(k\)</span> is the degree of each vertex. To define <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\lambda\)</span>, let <span class="math inline">\(x_i, x_j\)</span> be rows (or columns) of the adjacency matrix <span class="math inline">\(A\)</span>. Then: <span class="math inline">\(\mu = \langle x_i, x_j \rangle\)</span> when <span class="math inline">\(i \not \sim j\)</span> or the vertices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are not adjacent, and <span class="math inline">\(\lambda = \langle x_i, x_j \rangle\)</span> when <span class="math inline">\(i \sim j\)</span> or <span class="math inline">\(i\)</span> is adjacent to <span class="math inline">\(j\)</span>. The first set of CWDs appear on <span class="math inline">\(16\)</span> vertices: <span class="math inline">\(G\)</span>,<span class="math inline">\(H\)</span> that are non-isomorphic graphs with the same strongly regular parameter <span class="math inline">\((n, k, \mu, \lambda)\)</span> and are closed walk equivalent graphs. Here the the first two strongly regular graphs that are closed walk defiant.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Merged_SRGs.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 2: Strongly Regular Graphs with parameters <span class="math inline">\((16, 6, 2, 2)\)</span></figcaption>
-</figure>
+<div class="body">
+<a href="./posts/Sylv/index.html">
+<h3 class="no-anchor listing-title">
+Sylvester’s Four Point Problem
+</h3>
+<div class="listing-subtitle">
+Introduction to Crofton’s Formula in Geometric Probability
 </div>
-<p>This leads one to ask: how many are there - distinct SRGs with the same parameters.</p>
-</section>
-<section id="appendix" class="level2">
-<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
-<p><strong><em>Lemma 1.2:</em></strong> Let <span class="math inline">\(A,B\)</span> be real symmetric. There exists a fixed permutation matrix <span class="math inline">\(\pi\)</span> for all <span class="math inline">\(k\geq 0\)</span> such that <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k)\]</span> if and only if <span class="math display">\[\mathrm{diag}(A^k) = \pi~ \mathrm{diag}(B^k) ~~~(\star)\]</span> for <span class="math inline">\(1\leq k \leq n\)</span>.</p>
-<p><strong><em>Lemma 1.3:</em></strong> <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> satisfy the diagonal criteria if and only if <span class="math inline">\(\mathrm{diag}(M^k) = \mathrm{diag}(N^k)\)</span> where <span class="math inline">\(M,N\)</span> are permutation similar to <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively.</p>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Geometric Probability'); return false;">
+Geometric Probability
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Integral Geometry'); return false;">
+Integral Geometry
+</div>
+</div>
+<a href="./posts/Sylv/index.html">
+<div class="listing-description">
+James Joseph Sylvester posed the following problem in the Educational times of <span class="math inline">\(1864\)</span>:
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Sylv/index.html">
+<div class="listing-date">
+Dec 17, 2024
+</div>
+<div class="listing-author">
+Sajid Bin Mahamud
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Graph Theory,Linear Algebra,Summer 2024" data-listing-date-sort="1718780400000" data-listing-file-modified-sort="1764522539052" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="thumbnail">
+<p><a href="./posts/Summer-2024/index.html"> <img src="./posts/Summer-2024/picz.jpeg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Summer-2024/index.html">
+<h3 class="no-anchor listing-title">
+Summer in Finland
+</h3>
+<div class="listing-subtitle">
 
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Graph Theory'); return false;">
+Graph Theory
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Linear Algebra'); return false;">
+Linear Algebra
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Summer 2024'); return false;">
+Summer 2024
+</div>
+</div>
+<a href="./posts/Summer-2024/index.html">
+<div class="listing-description">
+[This article was corrected on June 26, 2024]
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Summer-2024/index.html">
+<div class="listing-date">
+Jun 19, 2024
+</div>
+<div class="listing-author">
+Sajid Bin Mahamud
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Real Analysis,Analytic Number Theory" data-listing-date-sort="1702800000000" data-listing-file-modified-sort="1764522539050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="thumbnail">
+<p><a href="./posts/Dirichlet/index.html"> <img src="./posts/Dirichlet/hipp.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Dirichlet/index.html">
+<h3 class="no-anchor listing-title">
+Mathematical Heresy and Irrational Numbers
+</h3>
+<div class="listing-subtitle">
 
-</section>
-
-</main> <!-- /main -->
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Real Analysis'); return false;">
+Real Analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Analytic Number Theory'); return false;">
+Analytic Number Theory
+</div>
+</div>
+<a href="./posts/Dirichlet/index.html">
+<div class="listing-description">
+Hip…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Dirichlet/index.html">
+<div class="listing-date">
+Dec 17, 2023
+</div>
+<div class="listing-author">
+Sajid Bin Mahamud
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

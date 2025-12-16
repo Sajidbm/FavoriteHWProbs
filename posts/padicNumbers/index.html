@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Personal Blog - p-adic Numbers: Changing What “Close” Means</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Personal Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html" rel="" target="">
+ <span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">p-adic Numbers: Changing What “Close” Means</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#cauchy-sequences-and-completion" id="toc-cauchy-sequences-and-completion" class="nav-link" data-scroll-target="#cauchy-sequences-and-completion"><span class="header-section-number">2</span> Cauchy sequences and completion</a>
+  <ul class="collapse">
+  <li><a href="#metrics-and-cauchy-sequences" id="toc-metrics-and-cauchy-sequences" class="nav-link" data-scroll-target="#metrics-and-cauchy-sequences"><span class="header-section-number">2.1</span> Metrics and Cauchy sequences</a></li>
+  <li><a href="#completion-from-to" id="toc-completion-from-to" class="nav-link" data-scroll-target="#completion-from-to"><span class="header-section-number">2.2</span> Completion: from () to ()</a></li>
+  </ul></li>
+  <li><a href="#the-p-adic-valuation-and-absolute-value" id="toc-the-p-adic-valuation-and-absolute-value" class="nav-link" data-scroll-target="#the-p-adic-valuation-and-absolute-value"><span class="header-section-number">3</span> The (p)-adic valuation and absolute value</a>
+  <ul class="collapse">
+  <li><a href="#the-valuation-_p-on-integers-and-rationals" id="toc-the-valuation-_p-on-integers-and-rationals" class="nav-link" data-scroll-target="#the-valuation-_p-on-integers-and-rationals"><span class="header-section-number">3.1</span> The valuation (_p) on integers and rationals</a></li>
+  <li><a href="#the-p-adic-absolute-value" id="toc-the-p-adic-absolute-value" class="nav-link" data-scroll-target="#the-p-adic-absolute-value"><span class="header-section-number">3.2</span> The (p)-adic absolute value</a></li>
+  <li><a href="#the-p-adic-metric" id="toc-the-p-adic-metric" class="nav-link" data-scroll-target="#the-p-adic-metric"><span class="header-section-number">3.3</span> The (p)-adic metric</a></li>
+  </ul></li>
+  <li><a href="#intuition-what-does-close-mean-p-adically" id="toc-intuition-what-does-close-mean-p-adically" class="nav-link" data-scroll-target="#intuition-what-does-close-mean-p-adically"><span class="header-section-number">4</span> Intuition: what does “close” mean (p)-adically?</a></li>
+  <li><a href="#ultrametric-geometry" id="toc-ultrametric-geometry" class="nav-link" data-scroll-target="#ultrametric-geometry"><span class="header-section-number">5</span> Ultrametric geometry</a></li>
+  <li><a href="#completing-with-respect-to-_p" id="toc-completing-with-respect-to-_p" class="nav-link" data-scroll-target="#completing-with-respect-to-_p"><span class="header-section-number">6</span> Completing () with respect to (||_p)</a>
+  <ul class="collapse">
+  <li><a href="#definition-of-_p" id="toc-definition-of-_p" class="nav-link" data-scroll-target="#definition-of-_p"><span class="header-section-number">6.1</span> Definition of (_p)</a></li>
+  </ul></li>
+  <li><a href="#the-algebraic-construction-of-_p" id="toc-the-algebraic-construction-of-_p" class="nav-link" data-scroll-target="#the-algebraic-construction-of-_p"><span class="header-section-number">7</span> The algebraic construction of (_p)</a>
+  <ul class="collapse">
+  <li><a href="#compatible-systems-modulo-pn" id="toc-compatible-systems-modulo-pn" class="nav-link" data-scroll-target="#compatible-systems-modulo-pn"><span class="header-section-number">7.1</span> Compatible systems modulo (p^n)</a></li>
+  <li><a href="#base-p-expansions-as-power-series" id="toc-base-p-expansions-as-power-series" class="nav-link" data-scroll-target="#base-p-expansions-as-power-series"><span class="header-section-number">7.2</span> Base-(p) expansions as power series</a></li>
+  <li><a href="#from-_p-to-_p" id="toc-from-_p-to-_p" class="nav-link" data-scroll-target="#from-_p-to-_p"><span class="header-section-number">7.3</span> From (_p) to (_p)</a></li>
+  </ul></li>
+  <li><a href="#a-worked-taste-lifting-roots-p-adically" id="toc-a-worked-taste-lifting-roots-p-adically" class="nav-link" data-scroll-target="#a-worked-taste-lifting-roots-p-adically"><span class="header-section-number">8</span> A worked taste: lifting roots (p)-adically</a></li>
+  <li><a href="#appendix-algebraic-background-optional" id="toc-appendix-algebraic-background-optional" class="nav-link" data-scroll-target="#appendix-algebraic-background-optional"><span class="header-section-number">9</span> Appendix: algebraic background (optional)</a>
+  <ul class="collapse">
+  <li><a href="#groups" id="toc-groups" class="nav-link" data-scroll-target="#groups"><span class="header-section-number">9.1</span> Groups</a></li>
+  <li><a href="#rings-and-integral-domains" id="toc-rings-and-integral-domains" class="nav-link" data-scroll-target="#rings-and-integral-domains"><span class="header-section-number">9.2</span> Rings and integral domains</a></li>
+  <li><a href="#unique-factorization-domains" id="toc-unique-factorization-domains" class="nav-link" data-scroll-target="#unique-factorization-domains"><span class="header-section-number">9.3</span> Unique factorization domains</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>In everyday mathematics, “close” is secretly political.</p>
+<p>The usual absolute value on the rationals () rewards <em>small</em> numbers and punishes <em>big</em> ones: (10^{-6}) is closer to (0) than (10^6) is. Our geometry, analysis, and intuition are all built on this choice.</p>
+<p>The (p)-adic numbers arise from a different vote on what “small” should mean. Instead of caring about the size of a rational number as a real quantity, we care about how divisible it is by a fixed prime (p). Numbers with many factors of (p) are declared “tiny,” even if they look huge on the real number line.</p>
+<p>This post is about how to formalize that idea:</p>
+<ul>
+<li>first through metrics, Cauchy sequences, and completions;</li>
+<li>then by defining a new absolute value (||_p) on ();</li>
+<li>and finally by showing the algebraic picture via inverse limits and power series in (p).</li>
+</ul>
+<p>By the end, (_p) should feel like a natural parallel universe to the real numbers, built from the same rationals but with a radically different sense of distance.</p>
+</section>
+<section id="cauchy-sequences-and-completion" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Cauchy sequences and completion</h1>
+<p>We start with the general idea of completing a metric space, because both the real numbers and the (p)-adic numbers arise from this construction.</p>
+<section id="metrics-and-cauchy-sequences" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="metrics-and-cauchy-sequences"><span class="header-section-number">2.1</span> Metrics and Cauchy sequences</h2>
+<p>A <strong>metric space</strong> is a pair ((M,d)) where (M) is a set and (d:MM_{}) satisfies:</p>
+<ol type="1">
+<li>(d(x,y)=0) iff (x=y),</li>
+<li>(d(x,y)=d(y,x)),</li>
+<li>(d(x,z)d(x,y)+d(y,z)) (triangle inequality).</li>
+</ol>
+<p>A sequence ((x_n)_{n}) in (M) is <strong>Cauchy</strong> if [ &gt;0;N&nbsp;&nbsp;m,nN d(x_m,x_n)&lt;. ] Intuitively, the terms eventually get arbitrarily close to each other, whether or not they converge to a point already in the space.</p>
+<p>A metric space ((M,d)) is <strong>complete</strong> if every Cauchy sequence converges in (M).</p>
+</section>
+<section id="completion-from-to" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="completion-from-to"><span class="header-section-number">2.2</span> Completion: from () to ()</h2>
+<p>The rationals () with the usual absolute value (|x|) form a metric space ((,||)) that is <em>not</em> complete. Classic example: a sequence of rational approximations to () is Cauchy in ((,||)) but does not converge to a rational number.</p>
+<p>There is a standard construction (via equivalence classes of Cauchy sequences) that associates to any metric space ((M,d)) a <strong>completion</strong> ((M,d)) together with an isometric embedding (i:MM) whose image is dense. For ((,||)), the completion is the real line ((,||)).</p>
+<p>The key idea for this post:</p>
+<blockquote class="blockquote">
+<p>If we change the metric on (), we get a <em>different</em> completion.<br>
+For the usual absolute value we get (); for the (p)-adic absolute value we will get (_p).</p>
+</blockquote>
+<p>So we now need to define the (p)-adic absolute value.</p>
+</section>
+</section>
+<section id="the-p-adic-valuation-and-absolute-value" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> The (p)-adic valuation and absolute value</h1>
+<p>Fix a prime (p). The first ingredient is the <strong>(p)-adic valuation</strong>.</p>
+<section id="the-valuation-_p-on-integers-and-rationals" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="the-valuation-_p-on-integers-and-rationals"><span class="header-section-number">3.1</span> The valuation (_p) on integers and rationals</h2>
+<p>For a nonzero integer (n), write it uniquely as [ n = p^k m, ] where (k) and (m) is not divisible by (p). Then define [ _p(n) := k,_p(0) := . ]</p>
+<p>For example, with (p=5): - (_5(4)=0) (no factor of 5), - (_5(5)=1), - (_5(10)=1), - (_5(25)=2), - (_5(125)=3), - (_5(0)=).</p>
+<p>Extend this to nonzero rationals by [ _p!() := _p(a)-_p(b),a,b,&nbsp;b. ] This makes sense because any rational can be written uniquely as a ratio of two integers up to a unit.</p>
+<p>So (_p) measures how many factors of (p) appear in a number: more factors of (p) means a <strong>larger</strong> valuation.</p>
+</section>
+<section id="the-p-adic-absolute-value" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="the-p-adic-absolute-value"><span class="header-section-number">3.2</span> The (p)-adic absolute value</h2>
+From (_p) we build the <strong>(p)-adic absolute value</strong>: [ |x|_p :=
+<span class="math display">\[\begin{cases}
+p^{-\nu_p(x)}, &amp; x\neq 0,\\
+0, &amp; x=0.
+\end{cases}\]</span>
+<p>]</p>
+<p>Two immediate consequences:</p>
+<ul>
+<li>If (x) is divisible by a high power of (p), then (_p(x)) is large and positive, so (|x|_p) is <strong>very small</strong>.</li>
+<li>If (p) does not divide (x), then (_p(x)=0) and (|x|_p=1).</li>
+</ul>
+<p>Examples with (p=5): [ |25|_5 = 5^{-_5(25)} = 5^{-2}=, |4|_5 = 1, ||_5 = 5^{-_5(1/125)} = 5^{-(-3)} = 5^3 = 125. ]</p>
+<p>Notice how “smallness” is inverted compared to the usual absolute value: (25) is <em>smaller</em> than (4) in the (5)-adic sense.</p>
+</section>
+<section id="the-p-adic-metric" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="the-p-adic-metric"><span class="header-section-number">3.3</span> The (p)-adic metric</h2>
+<p>Define the <strong>(p)-adic metric</strong> on () by [ d_p(x,y) := |x-y|_p. ]</p>
+<p>This is a genuine metric on ():</p>
+<ul>
+<li>(d_p(x,y)=0) iff (x=y),</li>
+<li>symmetric in (x,y),</li>
+<li>and it satisfies a <strong>strong</strong> triangle inequality (ultrametric inequality), which we will state shortly.</li>
+</ul>
+<p>Now we can consider Cauchy sequences with respect to (d_p), not the usual Euclidean distance.</p>
+</section>
+</section>
+<section id="intuition-what-does-close-mean-p-adically" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Intuition: what does “close” mean (p)-adically?</h1>
+<p>The (p)-adic notion of closeness is strange at first glance, so it helps to look at explicit sequences.</p>
+<p>Take (p=5). Consider the sequence: [ a_n = 1 + 5 + 5^2 + + 5^n. ]</p>
+<p>In the usual absolute value (||), the sequence ((a_n)) diverges to (+). But in the (5)-adic metric:</p>
+<ul>
+<li>The difference between successive terms is [ a_{n+1}-a_n = 5^{n+1}. ]</li>
+<li>The (5)-adic absolute value of this difference is [ |a_{n+1}-a_n|_5 = |5^{n+1}|_5 = 5^{-(n+1)} ] as (n).</li>
+</ul>
+<p>So in ((,d_5)), the terms of the sequence get closer and closer together: ((a_n)) is Cauchy in the (5)-adic metric.</p>
+<p>This is the central phenomenon: <strong>adding more powers of (p) changes a number by less and less (p)-adically.</strong> The “digits” in base (p) to the <em>left</em> (higher powers of (p)) become <em>less</em> important than the lower powers.</p>
+<p>You can think of (p)-adic numbers as infinite base-(p) expansions extending indefinitely to the <strong>left</strong>: [ + b_3 p^3 + b_2 p^2 + b_1 p + b_0. ]</p>
+<p>The sequence (a_n) above converges to a (5)-adic number whose “digits” are all (1) in base 5: [ _5. ]</p>
+</section>
+<section id="ultrametric-geometry" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Ultrametric geometry</h1>
+<p>The (p)-adic absolute value satisfies a stronger inequality than the usual triangle inequality: [ |x+z|_p {|x|_p,|z|_p}. ]</p>
+<p>Consequently, the metric (d_p(x,y)=|x-y|_p) is an <strong>ultrametric</strong>: [ d_p(x,z) {d_p(x,y),d_p(y,z)} x,y,z. ]</p>
+<p>This geometry has some counterintuitive consequences:</p>
+<ul>
+<li>Every triangle is <strong>isosceles</strong>: at least two sides have the same length, and the third is no longer than those.</li>
+<li>Balls are both <strong>open and closed</strong> (“clopen”).</li>
+<li>If two balls intersect, one is contained in the other.</li>
+</ul>
+<p>These properties make (p)-adic spaces feel totally unlike the real line, even though they start from the same underlying set of rationals.</p>
+</section>
+<section id="completing-with-respect-to-_p" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Completing () with respect to (||_p)</h1>
+<p>We now repeat the real-number story with the new metric.</p>
+<section id="definition-of-_p" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="definition-of-_p"><span class="header-section-number">6.1</span> Definition of (_p)</h2>
+<p>Consider the metric space ((,d_p)) with (d_p(x,y)=|x-y|_p). It is not complete: there are (p)-adic Cauchy sequences (like the geometric series above) that do not converge to a rational number.</p>
+<p><strong>Definition.</strong> The <strong>field of (p)-adic numbers</strong> (_p) is the completion of ((,||_p)). Concretely, its elements are equivalence classes of (p)-adic Cauchy sequences of rationals, where two sequences are equivalent if their difference converges to (0) in the (p)-adic metric.</p>
+<p>The field operations extend from () by performing them termwise on representatives of the equivalence classes. The metric extends to (_p), making ((_p,||_p)) a complete non-Archimedean valued field.</p>
+<p>The embedding [ :_p,xx,x,x,) ] is isometric and has dense image, just as () is dense in ().</p>
+</section>
+</section>
+<section id="the-algebraic-construction-of-_p" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> The algebraic construction of (_p)</h1>
+<p>There is also a more “algebraic” way to see the (p)-adic world, via inverse limits and base-(p) expansions. This perspective is particularly nice for the <strong>(p)-adic integers</strong> (_p).</p>
+<section id="compatible-systems-modulo-pn" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="compatible-systems-modulo-pn"><span class="header-section-number">7.1</span> Compatible systems modulo (p^n)</h2>
+<p>For each (n), consider the ring (/p^n). For (nm), there is a natural reduction map [ _{nm}:/p^n /p<sup>m,<em>{p^n}</em>{p</sup>m}. ]</p>
+<p>The family ({/p^n,_{nm}}) forms a projective system. The <strong>inverse limit</strong> [ <em>n /p^n ] consists of all sequences ((a_1,a_2,a_3,)) with [ a_n /p^n, </em>{nm}(a_n)=a_m nm. ]</p>
+<p>In other words, a point of the inverse limit is a coherent system of residues modulo (p, p^2, p^3,), all compatible under reduction.</p>
+<p><strong>Definition.</strong> The ring of <strong>(p)-adic integers</strong> (_p) is defined as [ _p := _n /p^n. ]</p>
+</section>
+<section id="base-p-expansions-as-power-series" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="base-p-expansions-as-power-series"><span class="header-section-number">7.2</span> Base-(p) expansions as power series</h2>
+<p>Each element of (_p) can be written uniquely as an infinite series [ b = b_0 + b_1 p + b_2 p^2 + b_3 p^3 + ] with digits (b_i{0,1,,p-1}).</p>
+<p>Sketch of why:</p>
+<ul>
+<li>Start with a compatible system ((a_n)) in the inverse limit.</li>
+<li>For each (n), choose a representative integer (a_n) of the class (a_n/p^n).</li>
+<li>Because of compatibility, we can choose the (a_n) so that [ a_n a_{n-1} n. ]</li>
+<li>Writing (a_n) in base (p), [ a_n = b_0 + b_1 p + + b_{n-1} p^{n-1}, ] we see that the coefficients (b_0,,b_{n-1}) stabilize as (n) grows, yielding an infinite sequence ((b_i)_{i}).</li>
+</ul>
+<p>Conversely, given an infinite base-(p) expansion (_{i=0}^b_i p^i), we can truncate at level (n) to get an element modulo (p^n), and those truncations are compatible. So there is a bijection between (_p) and the set of power series in (p) with coefficients in ({0,,p-1}).</p>
+<p>Under this identification:</p>
+<ul>
+<li>Ordinary integers (_p) correspond to those power series with only finitely many nonzero digits (b_i).</li>
+<li>“Genuinely (p)-adic” integers have infinitely many nonzero digits to the left.</li>
+</ul>
+</section>
+<section id="from-_p-to-_p" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="from-_p-to-_p"><span class="header-section-number">7.3</span> From (_p) to (_p)</h2>
+<p>The field (_p) is the field of fractions of (_p): [ _p = (_p). ]</p>
+<p>Every nonzero (x_p) can be written uniquely in the form [ x = p^k u,k,&nbsp;u_p^, ] where (u) is a (p)-adic unit (i.e.&nbsp;(|u|_p=1)). This reflects the valuation decomposition we started with: (_p(x)=k).</p>
+<p>The two constructions of (_p)—completion of ((,||_p)) and field of fractions of (_p)—agree, though proving this takes a bit of work.</p>
+</section>
+</section>
+<section id="a-worked-taste-lifting-roots-p-adically" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> A worked taste: lifting roots (p)-adically</h1>
+<p>As a small application, let’s briefly see how (p)-adic methods solve polynomial equations.</p>
+<p>Consider [ f(x)=x^2-2 ] and the prime (p=7). There is no rational solution to (x^2=2), but in (_7) we can look for a 7-adic root.</p>
+<p>Step 1: find a solution modulo (7). Compute squares modulo 7: [ 0^2,&nbsp; 1^2,&nbsp; 2^2,&nbsp; 3^2,&nbsp; 4^2,&nbsp; 5^2,&nbsp; 6^2. ] So (x) and (x) are solutions of (x^2).</p>
+<p>Take (x_1=3). We try to lift this to a solution modulo (7^2=49) of the form [ x_2 = 3 + 7k,k. ] Compute [ x_2^2 = (3+7k)^2 = 9 + 42k + 49k^2 + 42k . ] We want (x_2^2 ), so [ 9 + 42k + 42k . ] Divide by 7: [ 1 + 6k 6k k . ] Take (k=1), so (x_2 = 3+7=10). Then (x_2^2).</p>
+<p>This lifting process can be continued modulo (7<sup>3,7</sup>4,), and in the limit it converges to a 7-adic number (x_7) with (x^2=2). This is a concrete glimpse of what Hensel’s lemma does in general.</p>
+</section>
+<section id="appendix-algebraic-background-optional" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Appendix: algebraic background (optional)</h1>
+<p>For convenience, here are compressed definitions of some algebraic notions that often appear in discussions of (p)-adic numbers and algebraic number theory.</p>
+<section id="groups" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="groups"><span class="header-section-number">9.1</span> Groups</h2>
+<p>A <strong>group</strong> is a set (G) equipped with a binary operation (:GGG) such that:</p>
+<ol type="1">
+<li><strong>Associativity:</strong> ((ab)c = a(bc)) for all (a,b,cG).</li>
+<li><strong>Identity element:</strong> There exists (eG) s.t. (ea=ae=a) for all (aG).</li>
+<li><strong>Inverses:</strong> For each (aG) there exists (a^{-1}G) with (aa<sup>{-1}=a</sup>{-1}a=e).</li>
+</ol>
+<p>If (ab=ba) for all (a,bG), the group is <strong>abelian</strong> (commutative).</p>
+</section>
+<section id="rings-and-integral-domains" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="rings-and-integral-domains"><span class="header-section-number">9.2</span> Rings and integral domains</h2>
+<p>A (commutative, unital) <strong>ring</strong> (R) is a set with two operations (+) and () such that:</p>
+<ul>
+<li>((R,+)) is an abelian group (with identity (0)),</li>
+<li>() is associative, has an identity element (1),</li>
+<li>multiplication distributes over addition: (a(b+c)=ab+ac) and ((a+b)c=ac+bc).</li>
+</ul>
+<p>An element (aR) is a <strong>zero divisor</strong> if (a) and there exists (b) with (ab=0).</p>
+<p>An <strong>integral domain</strong> is a commutative ring with (1) and <strong>no</strong> zero divisors. Examples: (), ([x]), ([x]).</p>
+</section>
+<section id="unique-factorization-domains" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="unique-factorization-domains"><span class="header-section-number">9.3</span> Unique factorization domains</h2>
+<p>Let (R) be an integral domain.</p>
+<p>An element (uR) is a <strong>unit</strong> if it has a multiplicative inverse in (R). An element (pR) is <strong>irreducible</strong> if it is nonzero, not a unit, and whenever (p=ab) with (a,bR), then either (a) or (b) is a unit.</p>
+<p>The domain (R) is a <strong>unique factorization domain (UFD)</strong> if:</p>
+<ol type="1">
+<li>Every nonzero, nonunit element of (R) can be written as a finite product of irreducible elements.</li>
+<li>This factorization is unique up to permutation and multiplication by units.</li>
+</ol>
+<p>The integers () and the polynomial ring ([x]) are standard examples of UFDs. For (p)-adic number theory, the fact that () is a UFD underlies the clean behavior of the valuations (_p) and the analogy between prime factors and “linear factors” of polynomials.</p>
+<hr>
+<p>This gives a self-contained narrative: (_p) as a completion of () with respect to a new metric, with an algebraic model via inverse limits and base-(p) expansions, and a small glimpse of how these numbers are used in practice. You can now drop this <code>.qmd</code> file into a Quarto project and tweak the tone or level of detail to taste.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
