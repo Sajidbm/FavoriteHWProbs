@@ -9,9 +9,13 @@ bibliography: references.bib
 format: html
 ---
 
-$$\newcommand{\kbar}{\mathchar'26\mkern-9mu k}
-\newcommand{\ebar}{\mathchar'26\mkern-9mu \theta_0}
-\newcommand{\ebarblue}{\mathchar'26\mkern-9mu \textcolor{blue}{\theta_0}}
+
+
+## Introduction
+
+James Joseph Sylvester posed the following problem in the Educational times of $1864$:
+
+$$
 \DeclareMathOperator*{\lcm}{lcm}
 \DeclareMathOperator*{\R}{\mathbb{R}}
 \DeclareMathOperator*{\N}{\mathbb{N}}
@@ -28,26 +32,7 @@ $$\newcommand{\kbar}{\mathchar'26\mkern-9mu k}
 \DeclareMathOperator*{\expp}{\text{exp}}
 \DeclareMathOperator*{\lt}{L_{\bullet}}
 \DeclareMathOperator*{\roc}{\rotatebox[origin=c]{180}{c}}
-\DeclareMathOperator*{\rok}{\rotatebox[origin=c]{180}{$k$}}
-\DeclareMathOperator*{\boldv}{\boldsymbol{v}}
-\DeclareMathOperator*{\hbarbrown}{\textcolor{brown}{\hbar}}
-\DeclareMathOperator*{\e}{\textcolor{purple}{\theta_0_1}}
-\DeclareMathOperator*{\ee}{\textcolor{purple}{\theta_0_2}}
-\DeclareMathOperator*{\ered}{\textcolor{red}{--\theta_0_1 \theta_0_2}}
-\DeclareMathOperator*{\eblue}{\textcolor{blue}{\theta_0_1 + \theta_0_2}}
-\DeclareMathOperator*{\eebrown}{\textcolor{brown}{-- \theta_0}}
-\DeclareMathOperator*{\ebrown}{\textcolor{brown}{\theta_0}}
-\DeclareMathOperator*{\eebrownlevel}{\textcolor{brown}{\theta_0^2}}
-\DeclareMathOperator*{\tealN}{\textit{\textcolor{teal}{N}}}
-\DeclareMathOperator*{\bluenoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
-\DeclareMathOperator*{\pinknoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
-\DeclareMathOperator*{\uniform}{\boldsymbol{\rho}_{\star | \mathbb{T}}}
-\DeclareMathOperator*{\vcurrent}{\widehat{\textit{\textbf{v}}}}
-\newcommand{\dbar}{\mathchar'26\mkern-9mu \theta_0}$$
-
-## Introduction
-
-James Joseph Sylvester posed the following problem in the Educational times of $1864$:
+\DeclareMathOperator*{\rok}{\rotatebox[origin=c]{180}{$k$}}$$
 
 > **Problem**: Show that the chance of four points forming the apices of a reentrant quadrilateral is $\frac{1}{4}$ if they be taken at random in an indefinite plane, but $\frac{1}{4}+e^2 + x^2$, where $e$ is a finite constant and $x$ is a variable quantity, if they be limited by an area of any magnitude and of any form.
 

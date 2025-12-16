@@ -3,8 +3,19 @@ project:
   output-dir: docs
 
 website:
-  title: "FavoriteHWProblems"
+  title: "Personal Blog"
   navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "Blog"
+        href: blog.qmd
     right:
       - about.qmd
 format:

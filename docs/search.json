@@ -1,38 +1,24 @@
 [
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Sylvester’s Four Point Problem\n\n\nIntroduction to Crofton’s Formula in Geometric Probability\n\n\n\n\nGeometric Probability\n\n\nIntegral Geometry\n\n\n\n\n\n\n\n\n\n\n\nDec 17, 2024\n\n\nSajid Bin Mahamud\n\n\n\n\n\n\n  \n\n\n\n\nSummer in Finland\n\n\n\n\n\n\n\nGraph Theory\n\n\nLinear Algebra\n\n\nSummer 2024\n\n\n\n\n\n\n\n\n\n\n\nJun 19, 2024\n\n\nSajid Bin Mahamud\n\n\n\n\n\n\n  \n\n\n\n\nMathematical Heresy and Irrational Numbers\n\n\n\n\n\n\n\nReal Analysis\n\n\nAnalytic Number Theory\n\n\n\n\n\n\n\n\n\n\n\nDec 17, 2023\n\n\nSajid Bin Mahamud\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I’m Sajid. As the title of this website suggests, I’ll mostly be writing about some of my favorite HW problems from the math classes I have taken. Sometimes they’ll include long expositions, sometimes they’ll just be proofs and maybe a couple examples. But I expect to write often. If you have an interesting problem you’d like me to write about, send it over at sajidmahmud[sixty-one][at]gmail[dot]com.\nA note on the drawing above: The family of Giraffe Graphs was discovered on July 5, 2023 in Ames, Iowa. Last time I checked, they continue remain a happy family. It is the belief of this author that the youngest one has ADHD."
+    "text": "The family of Giraffe Graphs was discovered on July 5, 2023 in Ames, Iowa. Last time I checked, they continue remain a happy family. It is the belief of this author that the youngest one has ADHD."
   },
   {
-    "objectID": "posts/Summer-2024/index.html",
-    "href": "posts/Summer-2024/index.html",
-    "title": "Summer in Finland",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sajid Bin Mahamud",
     "section": "",
-    "text": "[This article was corrected on June 26, 2024]\nIt’s becoming incresingly important to maintain a catalog of my activities during the summer. I ‘will’ write a seperate post about my study abroad semester. For now, I shall focus on the present. About two weeks after finishing my semester in Budapest, I arrived in Finland on May 26th. I had the weekend to get settled before I officially started working on May 28th."
-  },
-  {
-    "objectID": "posts/Summer-2024/index.html#what-am-i-doing",
-    "href": "posts/Summer-2024/index.html#what-am-i-doing",
-    "title": "Summer in Finland",
-    "section": "What am I doing?",
-    "text": "What am I doing?\nI’m currently working in the research group of Dr. Vanni Noferini at Aalto University in Espoo, Finland. Espoo is located to the west of the capital Helsinki. Dr. Vanni specializes in Matrix theory and he is advising my project in Algebraic Graph Theory. The project is scheduled to run for about 10 weeks. With that settled, let’s dive into the problem itself.\nLet \\(A \\in M_{n\\times n}(\\mathbb{R})\\). Define \\[\\mathrm{diag}(A): M_{n\\times n} \\to M_{n \\times 1} \\text{ where } \\mathrm{diag}(A) = \\{a_{ii}\\}_{i=1}^{n}\\]\nThe main conjecture is the following:\nConjecture 1.1: Let \\(G\\) and \\(H\\) be simple graphs, and \\(A\\), \\(B\\) be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix \\(\\pi\\) such that for all \\(k\\geq 0\\) such that \\[\\mathrm{diag}(A^k) = \\pi~ \\mathrm{diag}(B^k)\\] Then \\(G\\) and \\(H\\) are isomorphic.\nIt’s not too hard to show that one only needs to check for \\(2\\leq k \\leq n\\) (See Lemma 1.2). With a little bit more work, one can also show that it is enough to require that \\(\\pi = I\\) for all \\(k\\) (See Lemma 1.3).\nThose who know a little bit about graph theory may also recall that there is no known polynomial time algorithm1 (read: efficient) that can determine if two graphs are isomorphic. It’s also not known if the problem is NP-complete. Essentially, my conjecture, if true, provides a polyomial time algorithm that solves the graph isomorphism problem. Let me demonstrate this by computing the computational cost of the algorithm described in Conjecture 1.1.\n\n\n\nFigure 1: There is no going back\n\n\nWe are interested in diagonal entries resulting from multiplication of adjacency matrices. Suppose we have a model of computation where field operations (i.e., muplication, addition) takes constant time 2. Multiplying two \\(n\\times n\\) matrices requires \\(n^3\\) multiplications and \\(n^2(n-1)\\) additions, totaling \\(2n^3-n^2\\) steps. Then multiplying \\(k&gt;2\\) adjacency matrices will require \\((k-1)\\cdot(2n^3-n^2)\\) many steps. For each adjacency matrix, we’d like to perform \\[ \\sum_{k=2}^{n} (k-1)= \\frac{(n-1)(n-2)}{2} \\approx n^2\\] many matrix multiplications. Hence, in total \\(2n^2(2n^3 - n^2) \\approx n^5\\) many steps for a given pair of graphs. In computer science language, the time complexity of the algorithm is \\(O(n^5)\\), polynomial time.\nThe run time of the best known algorithm to date is \\(2^{(O(\\log n )^3)}\\) (Harald Helfgott, 2017). The previously known bound is due to Luks and Babai: \\(2^{(O( \\sqrt{n \\log n} )}\\). This jump from sub-exponential to quasi-polynomial took about 40 years 3. Hence the suspicion that the conjecture could be false.\nNow, I have sufficient reasons to be interested in the problem. With the help of some simple python,  I have verified the contrapositive of the conjecture for all pairs of non-isomorphic graphs on upto 10 vertices which is roughly \\(1,229,2182\\) many graphs 4. It seems like for small number of vertices, the condition does determine all graphs upto isomorphism. Right now, I am interested in special classes of graphs such as trees and regular graphs."
-  },
-  {
-    "objectID": "posts/Summer-2024/index.html#appendix",
-    "href": "posts/Summer-2024/index.html#appendix",
-    "title": "Summer in Finland",
-    "section": "Appendix",
-    "text": "Appendix\nLemma 1.2: Let \\(A,B\\) be real symmetric. There exists a unique permutation matrix \\(\\pi\\) for all \\(k\\geq 0\\) such that \\[\\mathrm{diag}(A^k) = \\pi~ \\mathrm{diag}(B^k)\\] if and only if \\[\\mathrm{diag}(A^k) = \\pi~ \\mathrm{diag}(B^k) ~~~(\\star)\\] for \\(0\\leq k \\leq n\\).\nLemma 1.3: \\(A\\) and \\(B\\) satisfy the diagonal criteria if and only if \\(\\mathrm{diag}(M^k) = \\mathrm{diag}(N^k)\\) where \\(M,N\\) are permutation similar to \\(A\\) and \\(B\\) respectively."
-  },
-  {
-    "objectID": "posts/Summer-2024/index.html#footnotes",
-    "href": "posts/Summer-2024/index.html#footnotes",
-    "title": "Summer in Finland",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nAn algorithm that takes \\(O(n^k)\\) time to run where \\(n\\) is the size of the input and \\(k\\) is a positive constant.↩︎\nThe run time of the operation is independent of the size of input.↩︎\nIn practical terms, on an \\(O(n^5)\\) algorithm, if \\(n\\) doubles, the amount of time it takes to solve the problem is \\(2^5 = 32\\) times in proportion. On an \\(2^{((O\\log n)^3)}\\) algorithm the growth is quasi-polynomial. Meaning for \\(n=10,100,1000\\), it respectively takes \\(2^7 = 128\\) and \\(2^{19}\\) times longer than the former.↩︎\nDue to a coding error, my algorithm was unable to detect counterexamples on \\(n=10\\) vertices. This statement is no longer true following the fix.↩︎"
+    "text": "I’m Sajid Bin Mahamud, a mathematics graduate with a research focus in probabilistic modeling, dynamical systems, and computation. My work spans spectral graph theory, discrete geometry, and inference. My current work is in filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing, global climate models)."
   },
   {
     "objectID": "posts/Dirichlet/index.html",
@@ -70,18 +56,32 @@
     "text": "Footnotes\n\n\nThe rational case is straightforward.↩︎\nThis follows from the fact that rational numbers are dense in the real numbers.↩︎\nThis follows from the fact that rational numbers are dense in the real numbers.↩︎\nProfits or benefits gained from something gradually represents a proportionally smaller gain as more resources are invested.↩︎\nA geometric interpretation of this fact will be presented later in the article.↩︎\nCheck this for the example above.↩︎"
   },
   {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "I have conducted research in a wide variety of fields including spectral graph theory, computational geometry, discrete and combinatorial geometry, and dynamical systems."
+  },
+  {
+    "objectID": "research.html#current-projects",
+    "href": "research.html#current-projects",
+    "title": "Research",
+    "section": "Current Projects",
+    "text": "Current Projects\n\nOnline GPS spoofing detection algorithm\n\nWe may frame platform-agnostic GPS spoofing detection as an online change-point detection problem. This framework allows us to identify malignant interference without relying on rigid, deterministic signal thresholds.\nStandard deep learning approaches (e.g., LSTMs, Bayesian Neural Networks) are often computationally infeasible for the limited onboard resources of modern UAVs and autonomous vehicles.\nI am developing a lightweight, filtering-based inference framework. By monitoring the innovation sequence (residuals) of the state estimator, we can detect statistical deviations from the baseline operation in real-time.\nThe algorithm maintains a dynamic estimate of the residual distribution over a moving window. Detection is triggered when the distribution undergoes a statistically significant regime shift, indicating a potential spoofing attack.\n\n\n\nError propagation and regime change detection in climate models\n\nA critical bottleneck in climate modeling is sub-grid scale parameterization—accurately representing physical processes (e.g., cloud formation, turbulence) that occur at scales smaller than the model grid (typically 10-100 km).\nState-of-the-art approaches like NeuralGCM combine differentiable fluid dynamics solvers with neural networks to learn these sub-grid impacts from high-resolution data.\nMy research investigates error propagation within these hybrid systems, specifically aiming to detect regime changes where the model drifts from physics based forecast.\nI utilize Ensemble Kalman Filters (EnKF) to track the covariance of the model state, using the filter’s divergence as a diagnostic tool for identifying “unphysical” error growth or regime shifts."
+  },
+  {
     "objectID": "posts/Sylv/index.html",
     "href": "posts/Sylv/index.html",
     "title": "Sylvester’s Four Point Problem",
     "section": "",
-    "text": "\\[\\newcommand{\\kbar}{\\mathchar'26\\mkern-9mu k}\n\\newcommand{\\ebar}{\\mathchar'26\\mkern-9mu \\theta_0}\n\\newcommand{\\ebarblue}{\\mathchar'26\\mkern-9mu \\textcolor{blue}{\\theta_0}}\n\\DeclareMathOperator*{\\lcm}{lcm}\n\\DeclareMathOperator*{\\R}{\\mathbb{R}}\n\\DeclareMathOperator*{\\N}{\\mathbb{N}}\n\\DeclareMathOperator*{\\Q}{\\mathbb{Q}}\n\\DeclareMathOperator*{\\Var}{\\textnormal{Var}}\n\\DeclareMathOperator*{\\Area}{\\textnormal{Area}}\n\\DeclareMathOperator*{\\Cov}{\\textnormal{Cov}}\n\\DeclareMathOperator*{\\Conv}{\\textnormal{Conv}}\n\\DeclareMathOperator*{\\Z}{\\mathbb{Z}}\n\\DeclareMathOperator*{\\Zp}{{\\mathbb{Z}}^+}\n\\DeclareMathOperator*{\\E}{\\mathbb{E}}\n\\DeclareMathOperator*{\\C}{\\mathbb{C}}\n\\DeclareMathOperator*{\\A}{\\mathbb{A}}\n\\DeclareMathOperator*{\\expp}{\\text{exp}}\n\\DeclareMathOperator*{\\lt}{L_{\\bullet}}\n\\DeclareMathOperator*{\\roc}{\\rotatebox[origin=c]{180}{c}}\n\\DeclareMathOperator*{\\rok}{\\rotatebox[origin=c]{180}{$k$}}\n\\DeclareMathOperator*{\\boldv}{\\boldsymbol{v}}\n\\DeclareMathOperator*{\\hbarbrown}{\\textcolor{brown}{\\hbar}}\n\\DeclareMathOperator*{\\e}{\\textcolor{purple}{\\theta_0_1}}\n\\DeclareMathOperator*{\\ee}{\\textcolor{purple}{\\theta_0_2}}\n\\DeclareMathOperator*{\\ered}{\\textcolor{red}{--\\theta_0_1 \\theta_0_2}}\n\\DeclareMathOperator*{\\eblue}{\\textcolor{blue}{\\theta_0_1 + \\theta_0_2}}\n\\DeclareMathOperator*{\\eebrown}{\\textcolor{brown}{-- \\theta_0}}\n\\DeclareMathOperator*{\\ebrown}{\\textcolor{brown}{\\theta_0}}\n\\DeclareMathOperator*{\\eebrownlevel}{\\textcolor{brown}{\\theta_0^2}}\n\\DeclareMathOperator*{\\tealN}{\\textit{\\textcolor{teal}{N}}}\n\\DeclareMathOperator*{\\bluenoise}{\\boldsymbol{\\Psi}_{\\mathbb{T}}}\n\\DeclareMathOperator*{\\pinknoise}{\\boldsymbol{\\Psi}_{\\mathbb{T}}}\n\\DeclareMathOperator*{\\uniform}{\\boldsymbol{\\rho}_{\\star | \\mathbb{T}}}\n\\DeclareMathOperator*{\\vcurrent}{\\widehat{\\textit{\\textbf{v}}}}\n\\newcommand{\\dbar}{\\mathchar'26\\mkern-9mu \\theta_0}\\]"
+    "text": "James Joseph Sylvester posed the following problem in the Educational times of \\(1864\\):\n\\[\n\\DeclareMathOperator*{\\lcm}{lcm}\n\\DeclareMathOperator*{\\R}{\\mathbb{R}}\n\\DeclareMathOperator*{\\N}{\\mathbb{N}}\n\\DeclareMathOperator*{\\Q}{\\mathbb{Q}}\n\\DeclareMathOperator*{\\Var}{\\textnormal{Var}}\n\\DeclareMathOperator*{\\Area}{\\textnormal{Area}}\n\\DeclareMathOperator*{\\Cov}{\\textnormal{Cov}}\n\\DeclareMathOperator*{\\Conv}{\\textnormal{Conv}}\n\\DeclareMathOperator*{\\Z}{\\mathbb{Z}}\n\\DeclareMathOperator*{\\Zp}{{\\mathbb{Z}}^+}\n\\DeclareMathOperator*{\\E}{\\mathbb{E}}\n\\DeclareMathOperator*{\\C}{\\mathbb{C}}\n\\DeclareMathOperator*{\\A}{\\mathbb{A}}\n\\DeclareMathOperator*{\\expp}{\\text{exp}}\n\\DeclareMathOperator*{\\lt}{L_{\\bullet}}\n\\DeclareMathOperator*{\\roc}{\\rotatebox[origin=c]{180}{c}}\n\\DeclareMathOperator*{\\rok}{\\rotatebox[origin=c]{180}{$k$}}\\]\n\nProblem: Show that the chance of four points forming the apices of a reentrant quadrilateral is \\(\\frac{1}{4}\\) if they be taken at random in an indefinite plane, but \\(\\frac{1}{4}+e^2 + x^2\\), where \\(e\\) is a finite constant and \\(x\\) is a variable quantity, if they be limited by an area of any magnitude and of any form.\n\n\n\n\nRetrant Quadrilateral\n\n\nIn simple terms, part (1) of problem asks us to show that the probability of the event that four points sampled uniformly randomly on the infinite plane forms a concave quadrilateral is \\(\\frac{1}{4}\\). Part (2) asks for the probability in any region of bounded area. The problem, posed in the late nineteenth century, predates the invention of measure theoretic formulation of probability. As a result, the fact that ‘points taken at random in an indefinite plane’ is undefined evaded even the great J.J. Sylvester.\n\nDefinition: A set of point \\(K \\subset \\R^d\\) is convex if it contains the line segments connecting any pair of points within \\(K\\). The convex hull of set \\(K\\), denoted by \\(\\Conv(K)\\) is the unique minimal convex set that contains \\(K\\).\n\nOn a later issue of the Education times, Sylvester noted, “this problem does not admit of a determinate solution” and modified the question. Which, in modern terminology, translates to:\n\nProblem: Find the probability of the event where the convex hull of four randomly distributed points on any region \\(K\\) of the plane is a triangle.\n\nIn this post, I investigate the problem when \\(K\\) is a disk of radius \\(r\\), \\(D_r\\). At first, I will attempt the problem with techniques from my probability class and, hopefully, demonstrate that we need tools outside traditional probability theory to solve the problem reasonably."
   },
   {
     "objectID": "posts/Sylv/index.html#introduction",
     "href": "posts/Sylv/index.html#introduction",
     "title": "Sylvester’s Four Point Problem",
-    "section": "Introduction",
-    "text": "Introduction\nJames Joseph Sylvester posed the following problem in the Educational times of \\(1864\\):\n\nProblem: Show that the chance of four points forming the apices of a reentrant quadrilateral is \\(\\frac{1}{4}\\) if they be taken at random in an indefinite plane, but \\(\\frac{1}{4}+e^2 + x^2\\), where \\(e\\) is a finite constant and \\(x\\) is a variable quantity, if they be limited by an area of any magnitude and of any form.\n\n\n\n\nRetrant Quadrilateral\n\n\nIn simple terms, part (1) of problem asks us to show that the probability of the event that four points sampled uniformly randomly on the infinite plane forms a concave quadrilateral is \\(\\frac{1}{4}\\). Part (2) asks for the probability in any region of bounded area. The problem, posed in the late nineteenth century, predates the invention of measure theoretic formulation of probability. As a result, the fact that ‘points taken at random in an indefinite plane’ is undefined evaded even the great J.J. Sylvester.\n\nDefinition: A set of point \\(K \\subset \\R^d\\) is convex if it contains the line segments connecting any pair of points within \\(K\\). The convex hull of set \\(K\\), denoted by \\(\\Conv(K)\\) is the unique minimal convex set that contains \\(K\\).\n\nOn a later issue of the Education times, Sylvester noted, “this problem does not admit of a determinate solution” and modified the question. Which, in modern terminology, translates to:\n\nProblem: Find the probability of the event where the convex hull of four randomly distributed points on any region \\(K\\) of the plane is a triangle.\n\nIn this post, I investigate the problem when \\(K\\) is a disk of radius \\(r\\), \\(D_r\\). At first, I will attempt the problem with techniques from my probability class and, hopefully, demonstrate that we need tools outside traditional probability theory to solve the problem reasonably."
+    "section": "",
+    "text": "James Joseph Sylvester posed the following problem in the Educational times of \\(1864\\):\n\\[\n\\DeclareMathOperator*{\\lcm}{lcm}\n\\DeclareMathOperator*{\\R}{\\mathbb{R}}\n\\DeclareMathOperator*{\\N}{\\mathbb{N}}\n\\DeclareMathOperator*{\\Q}{\\mathbb{Q}}\n\\DeclareMathOperator*{\\Var}{\\textnormal{Var}}\n\\DeclareMathOperator*{\\Area}{\\textnormal{Area}}\n\\DeclareMathOperator*{\\Cov}{\\textnormal{Cov}}\n\\DeclareMathOperator*{\\Conv}{\\textnormal{Conv}}\n\\DeclareMathOperator*{\\Z}{\\mathbb{Z}}\n\\DeclareMathOperator*{\\Zp}{{\\mathbb{Z}}^+}\n\\DeclareMathOperator*{\\E}{\\mathbb{E}}\n\\DeclareMathOperator*{\\C}{\\mathbb{C}}\n\\DeclareMathOperator*{\\A}{\\mathbb{A}}\n\\DeclareMathOperator*{\\expp}{\\text{exp}}\n\\DeclareMathOperator*{\\lt}{L_{\\bullet}}\n\\DeclareMathOperator*{\\roc}{\\rotatebox[origin=c]{180}{c}}\n\\DeclareMathOperator*{\\rok}{\\rotatebox[origin=c]{180}{$k$}}\\]\n\nProblem: Show that the chance of four points forming the apices of a reentrant quadrilateral is \\(\\frac{1}{4}\\) if they be taken at random in an indefinite plane, but \\(\\frac{1}{4}+e^2 + x^2\\), where \\(e\\) is a finite constant and \\(x\\) is a variable quantity, if they be limited by an area of any magnitude and of any form.\n\n\n\n\nRetrant Quadrilateral\n\n\nIn simple terms, part (1) of problem asks us to show that the probability of the event that four points sampled uniformly randomly on the infinite plane forms a concave quadrilateral is \\(\\frac{1}{4}\\). Part (2) asks for the probability in any region of bounded area. The problem, posed in the late nineteenth century, predates the invention of measure theoretic formulation of probability. As a result, the fact that ‘points taken at random in an indefinite plane’ is undefined evaded even the great J.J. Sylvester.\n\nDefinition: A set of point \\(K \\subset \\R^d\\) is convex if it contains the line segments connecting any pair of points within \\(K\\). The convex hull of set \\(K\\), denoted by \\(\\Conv(K)\\) is the unique minimal convex set that contains \\(K\\).\n\nOn a later issue of the Education times, Sylvester noted, “this problem does not admit of a determinate solution” and modified the question. Which, in modern terminology, translates to:\n\nProblem: Find the probability of the event where the convex hull of four randomly distributed points on any region \\(K\\) of the plane is a triangle.\n\nIn this post, I investigate the problem when \\(K\\) is a disk of radius \\(r\\), \\(D_r\\). At first, I will attempt the problem with techniques from my probability class and, hopefully, demonstrate that we need tools outside traditional probability theory to solve the problem reasonably."
   },
   {
     "objectID": "posts/Sylv/index.html#calculation-brute-force",
@@ -102,13 +102,90 @@
     "href": "posts/Sylv/index.html#conclusion",
     "title": "Sylvester’s Four Point Problem",
     "section": "Conclusion",
-    "text": "Conclusion\nThe nice thing about Crofton’s formula is that it generalizes for any convex set \\(K\\), and \\(n\\) uniformly, randomly chosen points from \\(K\\). We can then use a similar approach to find the expected area of a triangle whose vertices are sampled uniformly, randomly from the unit disk: \\[\\begin{align*}\n\\E[\\Area(\\Delta)\\textnormal{ given that } \\Delta \\in D_1]  &= \\frac{35}{48\\pi}\n\\end{align*}\\] The computation becomes slightly involved so I will leave it as an exercise for the reader. As a result, we know that the probability of the event where the convex hull of four randomly distributed points on a unit disk is a triangle, denoted by \\(E\\) is: \\[ P(E) = \\frac{4\\E[\\Area(\\Delta)]}{\\pi} = \\frac{35}{12\\pi^2} \\] I like the result because its considered to be one of the earliest works in the world of geometric probability. If you’d like a more picturesque introduction to the material, check out this presentation"
+    "text": "Conclusion\nThe nice thing about Crofton’s formula is that it generalizes for any convex set \\(K\\), and \\(n\\) uniformly, randomly chosen points from \\(K\\). We can then use a similar approach to find the expected area of a triangle whose vertices are sampled uniformly, randomly from the unit disk: \\[\\begin{align*}\n\\E[\\Area(\\Delta)\\textnormal{ given that } \\Delta \\in D_1]  &= \\frac{35}{48\\pi}\n\\end{align*}\\] The computation becomes slightly involved so I will leave it as an exercise for the reader. As a result, we know that the probability of the event where the convex hull of four randomly distributed points on a unit disk is a triangle, denoted by \\(E\\) is: \\[ P(E) = \\frac{4\\E[\\Area(\\Delta)]}{\\pi} = \\frac{35}{12\\pi^2} \\] I like the result because its considered to be one of the earliest works in the world of geometric probability. If you’d like a more picturesque introduction to the material, check out this presentation."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "FavoriteHWProblems",
+    "objectID": "posts/Summer-2024/index.html",
+    "href": "posts/Summer-2024/index.html",
+    "title": "Summer in Finland",
     "section": "",
-    "text": "Sylvester’s Four Point Problem\n\n\nIntroduction to Crofton’s Formula in Geometric Probability\n\n\n\n\nGeometric Probability\n\n\nIntegral Geometry\n\n\n\n\n\n\n\n\n\n\n\nDec 17, 2024\n\n\nSajid Bin Mahamud\n\n\n\n\n\n\n  \n\n\n\n\nSummer in Finland\n\n\n\n\n\n\n\nGraph Theory\n\n\nLinear Algebra\n\n\nSummer 2024\n\n\n\n\n\n\n\n\n\n\n\nJun 19, 2024\n\n\nSajid Bin Mahamud\n\n\n\n\n\n\n  \n\n\n\n\nMathematical Heresy and Irrational Numbers\n\n\n\n\n\n\n\nReal Analysis\n\n\nAnalytic Number Theory\n\n\n\n\n\n\n\n\n\n\n\nDec 17, 2023\n\n\nSajid Bin Mahamud\n\n\n\n\n\n\nNo matching items"
+    "text": "[This article was corrected on June 26, 2024]\nIt’s becoming incresingly important to maintain a catalog of my activities during the summer. I ‘will’ write a seperate post about my study abroad semester. For now, I shall focus on the present. About two weeks after finishing my semester in Budapest, I arrived in Finland on May 26th. I had the weekend to get settled before I officially started working on May 28th."
+  },
+  {
+    "objectID": "posts/Summer-2024/index.html#what-am-i-doing",
+    "href": "posts/Summer-2024/index.html#what-am-i-doing",
+    "title": "Summer in Finland",
+    "section": "What am I doing?",
+    "text": "What am I doing?\nI’m currently working in the research group of Dr. Vanni Noferini at Aalto University in Espoo, Finland. Espoo is located to the west of the capital Helsinki. Dr. Vanni specializes in Matrix theory and he is advising my project in Algebraic Graph Theory. The project is scheduled to run for about 10 weeks. With that settled, let’s dive into the problem itself.\nLet \\(A \\in M_{n\\times n}(\\mathbb{R})\\). Define \\[\\mathrm{diag}(A): M_{n\\times n} \\to M_{n \\times 1} \\text{ where } \\mathrm{diag}(A) = \\{a_{ii}\\}_{i=1}^{n}\\]\nThe main conjecture is the following:\nConjecture 1.1: Let \\(G\\) and \\(H\\) be simple graphs, and \\(A\\), \\(B\\) be the corresponding adjacency matrices. Suppose there exists a unique permutation matrix \\(\\pi\\) such that for all \\(k\\geq 0\\) such that \\[\\mathrm{diag}(A^k) = \\pi~ \\mathrm{diag}(B^k)\\] Then \\(G\\) and \\(H\\) are isomorphic.\nIt’s not too hard to show that one only needs to check for \\(2\\leq k \\leq n\\) (See Lemma 1.2). With a little bit more work, one can also show that it is enough to require that \\(\\pi = I\\) for all \\(k\\) (See Lemma 1.3).\nThose who know a little bit about graph theory may also recall that there is no known polynomial time algorithm1 (read: efficient) that can determine if two graphs are isomorphic. It’s also not known if the problem is NP-complete. Essentially, my conjecture, if true, provides a polyomial time algorithm that solves the graph isomorphism problem. Let me demonstrate this by computing the computational cost of the algorithm described in Conjecture 1.1.\n\n\n\nFigure 1: There is no going back\n\n\nWe are interested in diagonal entries resulting from multiplication of adjacency matrices. Suppose we have a model of computation where field operations (i.e., muplication, addition) takes constant time 2. Multiplying two \\(n\\times n\\) matrices requires \\(n^3\\) multiplications and \\(n^2(n-1)\\) additions, totaling \\(2n^3-n^2\\) steps. Then multiplying \\(k&gt;2\\) adjacency matrices will require \\((k-1)\\cdot(2n^3-n^2)\\) many steps. For each adjacency matrix, we’d like to perform \\[ \\sum_{k=2}^{n} (k-1)= \\frac{(n-1)(n-2)}{2} \\approx n^2\\] many matrix multiplications. Hence, in total \\(2n^2(2n^3 - n^2) \\approx n^5\\) many steps for a given pair of graphs. In computer science language, the time complexity of the algorithm is \\(O(n^5)\\), polynomial time.\nThe run time of the best known algorithm to date is \\(2^{(O(\\log n )^3)}\\) (Harald Helfgott, 2017). The previously known bound is due to Luks and Babai: \\(2^{(O( \\sqrt{n \\log n} )}\\). This jump from sub-exponential to quasi-polynomial took about 40 years 3. Hence the suspicion that the conjecture could be false.\nNow, I have sufficient reasons to be interested in the problem. With the help of some simple python,  I have verified the contrapositive of the conjecture for all pairs of non-isomorphic graphs on upto 10 vertices which is roughly \\(1,229,2182\\) many graphs 4. It seems like for small number of vertices, the condition does determine all graphs upto isomorphism. Right now, I am interested in special classes of graphs such as trees and regular graphs."
+  },
+  {
+    "objectID": "posts/Summer-2024/index.html#appendix",
+    "href": "posts/Summer-2024/index.html#appendix",
+    "title": "Summer in Finland",
+    "section": "Appendix",
+    "text": "Appendix\nLemma 1.2: Let \\(A,B\\) be real symmetric. There exists a unique permutation matrix \\(\\pi\\) for all \\(k\\geq 0\\) such that \\[\\mathrm{diag}(A^k) = \\pi~ \\mathrm{diag}(B^k)\\] if and only if \\[\\mathrm{diag}(A^k) = \\pi~ \\mathrm{diag}(B^k) ~~~(\\star)\\] for \\(0\\leq k \\leq n\\).\nLemma 1.3: \\(A\\) and \\(B\\) satisfy the diagonal criteria if and only if \\(\\mathrm{diag}(M^k) = \\mathrm{diag}(N^k)\\) where \\(M,N\\) are permutation similar to \\(A\\) and \\(B\\) respectively."
+  },
+  {
+    "objectID": "posts/Summer-2024/index.html#footnotes",
+    "href": "posts/Summer-2024/index.html#footnotes",
+    "title": "Summer in Finland",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAn algorithm that takes \\(O(n^k)\\) time to run where \\(n\\) is the size of the input and \\(k\\) is a positive constant.↩︎\nThe run time of the operation is independent of the size of input.↩︎\nIn practical terms, on an \\(O(n^5)\\) algorithm, if \\(n\\) doubles, the amount of time it takes to solve the problem is \\(2^5 = 32\\) times in proportion. On an \\(2^{((O\\log n)^3)}\\) algorithm the growth is quasi-polynomial. Meaning for \\(n=10,100,1000\\), it respectively takes \\(2^7 = 128\\) and \\(2^{19}\\) times longer than the former.↩︎\nDue to a coding error, my algorithm was unable to detect counterexamples on \\(n=10\\) vertices. This statement is no longer true following the fix.↩︎"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Bin, Mahamud, S. Spectral Characterization of the Closed Walk Matrix. Reed College, 2025.\n\nAdvisor: Dr. Jamie Pommersheim."
+  },
+  {
+    "objectID": "publications.html#journal-articles",
+    "href": "publications.html#journal-articles",
+    "title": "Publications",
+    "section": "Journal Articles",
+    "text": "Journal Articles\n\nBin Mahamud, S. , et al. (2024). Coalescing sets preserving cospectrality of graphs arising from block similarity matrices. Electronic Journal of Linear Algebra (accepted, Nov 2024). arXiv."
+  },
+  {
+    "objectID": "publications.html#conference-proceedings",
+    "href": "publications.html#conference-proceedings",
+    "title": "Publications",
+    "section": "Conference Proceedings",
+    "text": "Conference Proceedings\n\nThe Closed Walk Matrix and relation to Graph Isomorphism, Joint Math Meetings, Jan 9, 2025"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Mirzapur Cadet College\nReed College, Bachelor’s of Arts (Mathematics)"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Mirzapur Cadet College\nReed College, Bachelor’s of Arts (Mathematics)"
+  },
+  {
+    "objectID": "cv.html#experience",
+    "href": "cv.html#experience",
+    "title": "Curriculum Vitae",
+    "section": "Experience",
+    "text": "Experience\n\nThis browser does not support PDFs. Please download the PDF to view it: &lt;a href=\"files/cv.pdf\"&gt;Download PDF&lt;/a&gt;\n\n\n  Download CV"
+  },
+  {
+    "objectID": "publications.html#thesis",
+    "href": "publications.html#thesis",
+    "title": "Publications",
+    "section": "",
+    "text": "Bin, Mahamud, S. Spectral Characterization of the Closed Walk Matrix. Reed College, 2025.\n\nAdvisor: Dr. Jamie Pommersheim."
+  },
+  {
+    "objectID": "research.html#online-gps-spoofing-detection-algorithm",
+    "href": "research.html#online-gps-spoofing-detection-algorithm",
+    "title": "Research",
+    "section": "### Online GPS spoofing detection algorithm",
+    "text": "### Online GPS spoofing detection algorithm\n\nError Propagation and Regime Change Detection in climate models\nDescription of the project goes here."
   }
 ]

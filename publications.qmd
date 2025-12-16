@@ -1,0 +1,16 @@
+---
+title: "Publications"
+---
+
+## Thesis
+
+* Bin, Mahamud, S. [Spectral Characterization of the Closed Walk Matrix.](https://drive.google.com/file/d/1EgXXoDRa3cVX78nx1LN_WEuPK6CwHtDl/view?usp=sharing) Reed College, 2025. 
+    * Advisor: Dr. Jamie Pommersheim.
+
+## Journal Articles
+
+*   Bin Mahamud, S. , et al. (2024). **Coalescing sets preserving cospectrality of graphs arising from block similarity matrices.** Electronic Journal of Linear Algebra (accepted, Nov 2024). [arXiv](https://arxiv.org/abs/2404.01561).
+
+## Conference Proceedings
+
+*  [The Closed Walk Matrix and relation to Graph Isomorphism](https://drive.google.com/file/d/11P9YeN8ZWk33TK7USWWVQ1zfAd_aQUis/view?usp=sharing), Joint Math Meetings, Jan 9, 2025

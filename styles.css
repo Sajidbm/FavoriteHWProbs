@@ -1,1 +1,7 @@
 /* css styles */
+
+/* Adjust the position of the image within the circle */
+.quarto-about-jolla .about-image {
+    object-position: 50% 80%;
+    /* Start with center. Change to 'top', 'bottom', or '50% 30%' to fine-tune */
+}

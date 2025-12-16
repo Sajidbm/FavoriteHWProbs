@@ -1,0 +1,366 @@
+---
+title: "p-adic Numbers: Changing What “Close” Means"
+format:
+  html:
+    toc: true
+    number-sections: true
+draft: true
+---
+
+# Introduction
+
+In everyday mathematics, “close” is secretly political.
+
+The usual absolute value on the rationals \(\mathbb{Q}\) rewards *small* numbers and punishes *big* ones: \(10^{-6}\) is closer to \(0\) than \(10^6\) is. Our geometry, analysis, and intuition are all built on this choice.
+
+The \(p\)-adic numbers arise from a different vote on what “small” should mean. Instead of caring about the size of a rational number as a real quantity, we care about how divisible it is by a fixed prime \(p\). Numbers with many factors of \(p\) are declared “tiny,” even if they look huge on the real number line.
+
+This post is about how to formalize that idea:
+
+- first through metrics, Cauchy sequences, and completions;
+- then by defining a new absolute value \(|\cdot|_p\) on \(\mathbb{Q}\);
+- and finally by showing the algebraic picture via inverse limits and power series in \(p\).
+
+By the end, \(\mathbb{Q}_p\) should feel like a natural parallel universe to the real numbers, built from the same rationals but with a radically different sense of distance.
+
+# Cauchy sequences and completion
+
+We start with the general idea of completing a metric space, because both the real numbers and the \(p\)-adic numbers arise from this construction.
+
+## Metrics and Cauchy sequences
+
+A **metric space** is a pair \((M,d)\) where \(M\) is a set and \(d:M\times M\to \mathbb{R}_{\ge 0}\) satisfies:
+
+1. \(d(x,y)=0\) iff \(x=y\),
+2. \(d(x,y)=d(y,x)\),
+3. \(d(x,z)\le d(x,y)+d(y,z)\) (triangle inequality).
+
+A sequence \((x_n)_{n\ge 1}\) in \(M\) is **Cauchy** if
+\[
+\forall \varepsilon>0\;\exists N\ \text{s.t.}\ m,n\ge N \implies d(x_m,x_n)<\varepsilon.
+\]
+Intuitively, the terms eventually get arbitrarily close to each other, whether or not they converge to a point already in the space.
+
+A metric space \((M,d)\) is **complete** if every Cauchy sequence converges in \(M\).
+
+## Completion: from \(\mathbb{Q}\) to \(\mathbb{R}\)
+
+The rationals \(\mathbb{Q}\) with the usual absolute value \(|x|\) form a metric space \((\mathbb{Q},|\cdot|)\) that is *not* complete. Classic example: a sequence of rational approximations to \(\sqrt{2}\) is Cauchy in \((\mathbb{Q},|\cdot|)\) but does not converge to a rational number.
+
+There is a standard construction (via equivalence classes of Cauchy sequences) that associates to any metric space \((M,d)\) a **completion** \((\widehat M,\widehat d)\) together with an isometric embedding \(i:M\hookrightarrow\widehat M\) whose image is dense. For \((\mathbb{Q},|\cdot|)\), the completion is the real line \((\mathbb{R},|\cdot|)\).
+
+The key idea for this post:
+
+> If we change the metric on \(\mathbb{Q}\), we get a *different* completion.  
+> For the usual absolute value we get \(\mathbb{R}\); for the \(p\)-adic absolute value we will get \(\mathbb{Q}_p\).
+
+So we now need to define the \(p\)-adic absolute value.
+
+# The \(p\)-adic valuation and absolute value
+
+Fix a prime \(p\). The first ingredient is the **\(p\)-adic valuation**.
+
+## The valuation \(\nu_p\) on integers and rationals
+
+For a nonzero integer \(n\), write it uniquely as
+\[
+n = p^k \cdot m,
+\]
+where \(k\in\mathbb{Z}\) and \(m\in\mathbb{Z}\) is not divisible by \(p\). Then define
+\[
+\nu_p(n) := k,\qquad \nu_p(0) := \infty.
+\]
+
+For example, with \(p=5\):
+- \(\nu_5(4)=0\) (no factor of 5),
+- \(\nu_5(5)=1\),
+- \(\nu_5(10)=1\),
+- \(\nu_5(25)=2\),
+- \(\nu_5(125)=3\),
+- \(\nu_5(0)=\infty\).
+
+Extend this to nonzero rationals by
+\[
+\nu_p\!\left(\frac{a}{b}\right) := \nu_p(a)-\nu_p(b),\quad a,b\in\mathbb{Z},\ b\neq 0.
+\]
+This makes sense because any rational can be written uniquely as a ratio of two integers up to a unit.
+
+So \(\nu_p\) measures how many factors of \(p\) appear in a number: more factors of \(p\) means a **larger** valuation.
+
+## The \(p\)-adic absolute value
+
+From \(\nu_p\) we build the **\(p\)-adic absolute value**:
+\[
+|x|_p :=
+\begin{cases}
+p^{-\nu_p(x)}, & x\neq 0,\\
+0, & x=0.
+\end{cases}
+\]
+
+Two immediate consequences:
+
+- If \(x\) is divisible by a high power of \(p\), then \(\nu_p(x)\) is large and positive, so \(|x|_p\) is **very small**.
+- If \(p\) does not divide \(x\), then \(\nu_p(x)=0\) and \(|x|_p=1\).
+
+Examples with \(p=5\):
+\[
+|25|_5 = 5^{-\nu_5(25)} = 5^{-2}=\frac{1}{25},\qquad
+|4|_5 = 1,\qquad
+\left|\frac{1}{125}\right|_5 = 5^{-\nu_5(1/125)} = 5^{-(-3)} = 5^3 = 125.
+\]
+
+Notice how “smallness” is inverted compared to the usual absolute value: \(25\) is *smaller* than \(4\) in the \(5\)-adic sense.
+
+## The \(p\)-adic metric
+
+Define the **\(p\)-adic metric** on \(\mathbb{Q}\) by
+\[
+d_p(x,y) := |x-y|_p.
+\]
+
+This is a genuine metric on \(\mathbb{Q}\):
+
+- \(d_p(x,y)=0\) iff \(x=y\),
+- symmetric in \(x,y\),
+- and it satisfies a **strong** triangle inequality (ultrametric inequality), which we will state shortly.
+
+Now we can consider Cauchy sequences with respect to \(d_p\), not the usual Euclidean distance.
+
+# Intuition: what does “close” mean \(p\)-adically?
+
+The \(p\)-adic notion of closeness is strange at first glance, so it helps to look at explicit sequences.
+
+Take \(p=5\). Consider the sequence:
+\[
+a_n = 1 + 5 + 5^2 + \cdots + 5^n.
+\]
+
+In the usual absolute value \(|\cdot|\), the sequence \((a_n)\) diverges to \(+\infty\). But in the \(5\)-adic metric:
+
+- The difference between successive terms is
+  \[
+  a_{n+1}-a_n = 5^{n+1}.
+  \]
+- The \(5\)-adic absolute value of this difference is
+  \[
+  |a_{n+1}-a_n|_5 = |5^{n+1}|_5 = 5^{-(n+1)} \longrightarrow 0
+  \]
+  as \(n\to\infty\).
+
+So in \((\mathbb{Q},d_5)\), the terms of the sequence get closer and closer together: \((a_n)\) is Cauchy in the \(5\)-adic metric.
+
+This is the central phenomenon: **adding more powers of \(p\) changes a number by less and less \(p\)-adically.** The “digits” in base \(p\) to the *left* (higher powers of \(p\)) become *less* important than the lower powers.
+
+You can think of \(p\)-adic numbers as infinite base-\(p\) expansions extending indefinitely to the **left**:
+\[
+\cdots + b_3 p^3 + b_2 p^2 + b_1 p + b_0.
+\]
+
+The sequence \(a_n\) above converges to a \(5\)-adic number whose “digits” are all \(1\) in base 5:
+\[
+\cdots 11111\_5.
+\]
+
+# Ultrametric geometry
+
+The \(p\)-adic absolute value satisfies a stronger inequality than the usual triangle inequality:
+\[
+|x+z|_p \le \max\{|x|_p,|z|_p\}.
+\]
+
+Consequently, the metric \(d_p(x,y)=|x-y|_p\) is an **ultrametric**:
+\[
+d_p(x,z) \le \max\{d_p(x,y),d_p(y,z)\} \quad\text{for all }x,y,z\in\mathbb{Q}.
+\]
+
+This geometry has some counterintuitive consequences:
+
+- Every triangle is **isosceles**: at least two sides have the same length, and the third is no longer than those.
+- Balls are both **open and closed** (“clopen”).
+- If two balls intersect, one is contained in the other.
+
+These properties make \(p\)-adic spaces feel totally unlike the real line, even though they start from the same underlying set of rationals.
+
+# Completing \(\mathbb{Q}\) with respect to \(|\cdot|_p\)
+
+We now repeat the real-number story with the new metric.
+
+## Definition of \(\mathbb{Q}_p\)
+
+Consider the metric space \((\mathbb{Q},d_p)\) with \(d_p(x,y)=|x-y|_p\). It is not complete: there are \(p\)-adic Cauchy sequences (like the geometric series above) that do not converge to a rational number.
+
+**Definition.** The **field of \(p\)-adic numbers** \(\mathbb{Q}_p\) is the completion of \((\mathbb{Q},|\cdot|_p)\). Concretely, its elements are equivalence classes of \(p\)-adic Cauchy sequences of rationals, where two sequences are equivalent if their difference converges to \(0\) in the \(p\)-adic metric.
+
+The field operations extend from \(\mathbb{Q}\) by performing them termwise on representatives of the equivalence classes. The metric extends to \(\mathbb{Q}_p\), making \((\mathbb{Q}_p,|\cdot|_p)\) a complete non-Archimedean valued field.
+
+The embedding
+\[
+\iota:\mathbb{Q}\hookrightarrow \mathbb{Q}_p,\qquad x\mapsto \text{(constant sequence }x,x,x,\dots)
+\]
+is isometric and has dense image, just as \(\mathbb{Q}\) is dense in \(\mathbb{R}\).
+
+# The algebraic construction of \(\mathbb{Z}_p\)
+
+There is also a more “algebraic” way to see the \(p\)-adic world, via inverse limits and base-\(p\) expansions. This perspective is particularly nice for the **\(p\)-adic integers** \(\mathbb{Z}_p\).
+
+## Compatible systems modulo \(p^n\)
+
+For each \(n\ge 1\), consider the ring \(\mathbb{Z}/p^n\mathbb{Z}\). For \(n\ge m\), there is a natural reduction map
+\[
+\mu_{nm}:\mathbb{Z}/p^n\mathbb{Z} \longrightarrow \mathbb{Z}/p^m\mathbb{Z},\qquad
+[a]_{p^n}\mapsto [a]_{p^m}.
+\]
+
+The family \(\{\mathbb{Z}/p^n\mathbb{Z},\mu_{nm}\}\) forms a projective system. The **inverse limit**
+\[
+\varprojlim_n \mathbb{Z}/p^n\mathbb{Z}
+\]
+consists of all sequences \((a_1,a_2,a_3,\dots)\) with
+\[
+a_n \in \mathbb{Z}/p^n\mathbb{Z},\quad
+\mu_{nm}(a_n)=a_m \text{ for all } n\ge m.
+\]
+
+In other words, a point of the inverse limit is a coherent system of residues modulo \(p, p^2, p^3,\dots\), all compatible under reduction.
+
+**Definition.** The ring of **\(p\)-adic integers** \(\mathbb{Z}_p\) is defined as
+\[
+\mathbb{Z}_p := \varprojlim_n \mathbb{Z}/p^n\mathbb{Z}.
+\]
+
+## Base-\(p\) expansions as power series
+
+Each element of \(\mathbb{Z}_p\) can be written uniquely as an infinite series
+\[
+b = b_0 + b_1 p + b_2 p^2 + b_3 p^3 + \cdots
+\]
+with digits \(b_i\in\{0,1,\dots,p-1\}\).
+
+Sketch of why:
+
+- Start with a compatible system \((a_n)\) in the inverse limit.
+- For each \(n\), choose a representative integer \(\tilde a_n\) of the class \(a_n\in\mathbb{Z}/p^n\mathbb{Z}\).
+- Because of compatibility, we can choose the \(\tilde a_n\) so that
+  \[
+  \tilde a_n \equiv \tilde a_{n-1} \pmod{p^{n-1}}\quad\text{for all }n.
+  \]
+- Writing \(\tilde a_n\) in base \(p\),
+  \[
+  \tilde a_n = b_0 + b_1 p + \cdots + b_{n-1} p^{n-1},
+  \]
+  we see that the coefficients \(b_0,\dots,b_{n-1}\) stabilize as \(n\) grows, yielding an infinite sequence \((b_i)_{i\ge 0}\).
+
+Conversely, given an infinite base-\(p\) expansion \(\sum_{i=0}^\infty b_i p^i\), we can truncate at level \(n\) to get an element modulo \(p^n\), and those truncations are compatible. So there is a bijection between \(\mathbb{Z}_p\) and the set of power series in \(p\) with coefficients in \(\{0,\dots,p-1\}\).
+
+Under this identification:
+
+- Ordinary integers \(\mathbb{Z}\subset \mathbb{Z}_p\) correspond to those power series with only finitely many nonzero digits \(b_i\).
+- “Genuinely \(p\)-adic” integers have infinitely many nonzero digits to the left.
+
+## From \(\mathbb{Z}_p\) to \(\mathbb{Q}_p\)
+
+The field \(\mathbb{Q}_p\) is the field of fractions of \(\mathbb{Z}_p\):
+\[
+\mathbb{Q}_p = \mathrm{Frac}(\mathbb{Z}_p).
+\]
+
+Every nonzero \(x\in\mathbb{Q}_p\) can be written uniquely in the form
+\[
+x = p^k u,\quad k\in\mathbb{Z},\ u\in\mathbb{Z}_p^\times,
+\]
+where \(u\) is a \(p\)-adic unit (i.e. \(|u|_p=1\)). This reflects the valuation decomposition we started with: \(\nu_p(x)=k\).
+
+The two constructions of \(\mathbb{Q}_p\)—completion of \((\mathbb{Q},|\cdot|_p)\) and field of fractions of \(\mathbb{Z}_p\)—agree, though proving this takes a bit of work.
+
+# A worked taste: lifting roots \(p\)-adically
+
+As a small application, let’s briefly see how \(p\)-adic methods solve polynomial equations.
+
+Consider
+\[
+f(x)=x^2-2
+\]
+and the prime \(p=7\). There is no rational solution to \(x^2=2\), but in \(\mathbb{Q}_7\) we can look for a 7-adic root.
+
+Step 1: find a solution modulo \(7\). Compute squares modulo 7:
+\[
+0^2\equiv 0,\ 
+1^2\equiv 1,\ 
+2^2\equiv 4,\ 
+3^2\equiv 9\equiv 2,\ 
+4^2\equiv 16\equiv 2,\ 
+5^2\equiv 4,\ 
+6^2\equiv 1\pmod{7}.
+\]
+So \(x\equiv 3\) and \(x\equiv 4\) are solutions of \(x^2\equiv 2\pmod{7}\).
+
+Take \(x_1=3\). We try to lift this to a solution modulo \(7^2=49\) of the form
+\[
+x_2 = 3 + 7k,\quad k\in\mathbb{Z}.
+\]
+Compute
+\[
+x_2^2 = (3+7k)^2 = 9 + 42k + 49k^2
+\equiv 9 + 42k \pmod{49}.
+\]
+We want \(x_2^2 \equiv 2\pmod{49}\), so
+\[
+9 + 42k \equiv 2 \pmod{49}
+\quad\iff\quad
+7 + 42k \equiv 0 \pmod{49}.
+\]
+Divide by 7:
+\[
+1 + 6k \equiv 0 \pmod{7}
+\quad\iff\quad
+6k \equiv 6 \pmod{7}
+\quad\iff\quad
+k\equiv 1 \pmod{7}.
+\]
+Take \(k=1\), so \(x_2 = 3+7=10\). Then \(x_2^2\equiv 2\pmod{49}\).
+
+This lifting process can be continued modulo \(7^3,7^4,\dots\), and in the limit it converges to a 7-adic number \(x\in\mathbb{Q}_7\) with \(x^2=2\). This is a concrete glimpse of what Hensel’s lemma does in general.
+
+# Appendix: algebraic background (optional)
+
+For convenience, here are compressed definitions of some algebraic notions that often appear in discussions of \(p\)-adic numbers and algebraic number theory.
+
+## Groups
+
+A **group** is a set \(G\) equipped with a binary operation \(\cdot:G\times G\to G\) such that:
+
+1. **Associativity:** \((ab)c = a(bc)\) for all \(a,b,c\in G\).
+2. **Identity element:** There exists \(e\in G\) s.t. \(ea=ae=a\) for all \(a\in G\).
+3. **Inverses:** For each \(a\in G\) there exists \(a^{-1}\in G\) with \(aa^{-1}=a^{-1}a=e\).
+
+If \(ab=ba\) for all \(a,b\in G\), the group is **abelian** (commutative).
+
+## Rings and integral domains
+
+A (commutative, unital) **ring** \(R\) is a set with two operations \(+\) and \(\cdot\) such that:
+
+- \((R,+)\) is an abelian group (with identity \(0\)),
+- \(\cdot\) is associative, has an identity element \(1\neq 0\),
+- multiplication distributes over addition: \(a(b+c)=ab+ac\) and \((a+b)c=ac+bc\).
+
+An element \(a\in R\) is a **zero divisor** if \(a\neq 0\) and there exists \(b\neq 0\) with \(ab=0\).
+
+An **integral domain** is a commutative ring with \(1\neq 0\) and **no** zero divisors. Examples: \(\mathbb{Z}\), \(\mathbb{Z}[x]\), \(\mathbb{C}[x]\).
+
+## Unique factorization domains
+
+Let \(R\) be an integral domain.
+
+An element \(u\in R\) is a **unit** if it has a multiplicative inverse in \(R\). An element \(p\in R\) is **irreducible** if it is nonzero, not a unit, and whenever \(p=ab\) with \(a,b\in R\), then either \(a\) or \(b\) is a unit.
+
+The domain \(R\) is a **unique factorization domain (UFD)** if:
+
+1. Every nonzero, nonunit element of \(R\) can be written as a finite product of irreducible elements.
+2. This factorization is unique up to permutation and multiplication by units.
+
+The integers \(\mathbb{Z}\) and the polynomial ring \(\mathbb{C}[x]\) are standard examples of UFDs. For \(p\)-adic number theory, the fact that \(\mathbb{Z}\) is a UFD underlies the clean behavior of the valuations \(\nu_p\) and the analogy between prime factors and “linear factors” of polynomials.
+
+---
+
+This gives a self-contained narrative: \(\mathbb{Q}_p\) as a completion of \(\mathbb{Q}\) with respect to a new metric, with an algebraic model via inverse limits and base-\(p\) expansions, and a small glimpse of how these numbers are used in practice. You can now drop this `.qmd` file into a Quarto project and tweak the tone or level of detail to taste.

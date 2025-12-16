@@ -1,0 +1,19 @@
+---
+title: "Research"
+---
+
+I have conducted research in a wide variety of fields including spectral graph theory, computational geometry, discrete and combinatorial geometry, and dynamical systems. 
+
+## Current Projects
+
+### [Online GPS spoofing detection algorithm](https://github.com/Sajidbm/Aerial-Data-Analysis)
+- We may frame platform-agnostic GPS spoofing detection as an **online change-point detection** problem. This framework allows us to identify malignant interference without relying on rigid, deterministic signal thresholds.
+- Standard deep learning approaches (e.g., LSTMs, Bayesian Neural Networks) are often computationally infeasible for the limited onboard resources of modern UAVs and autonomous vehicles.
+- I am developing a lightweight, filtering-based inference framework. By monitoring the innovation sequence (residuals) of the state estimator, we can detect statistical deviations from the baseline operation in real-time.
+- The algorithm maintains a dynamic estimate of the residual distribution over a moving window. Detection is triggered when the distribution undergoes a statistically significant regime shift, indicating a potential spoofing attack.
+
+### [Error propagation and regime change detection in climate models](https://github.com/Sajidbm/Climate-Modelling)
+- A critical bottleneck in climate modeling is **sub-grid scale parameterization**—accurately representing physical processes (e.g., cloud formation, turbulence) that occur at scales smaller than the model grid (typically 10-100 km).
+- State-of-the-art approaches like **NeuralGCM** combine differentiable fluid dynamics solvers with neural networks to learn these sub-grid impacts from high-resolution data.
+- My research investigates error propagation within these hybrid systems, specifically aiming to detect **regime changes** where the model drifts from physics based forecast.
+- I utilize **Ensemble Kalman Filters (EnKF)** to track the covariance of the model state, using the filter's divergence as a diagnostic tool for identifying "unphysical" error growth or regime shifts. 
