@@ -1,6 +1,5 @@
 ---
-title: "Sajid Bin Mahamud"
-image: bio.jpg
+title: "Personal Website of Sajid Bin Mahamud"
 about:
   template: jolla
   links:
@@ -13,8 +12,31 @@ about:
     - icon: envelope
       text: Contact
       href: mailto:sajidmahmud61@gmail.com
+listing:
+  id: recent-posts
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 1
+  image-align: right
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, reading-time]
 ---
 
-::: {style="text-align: justify"}
-I’m Sajid Bin Mahamud, a mathematics graduate with a research focus in probabilistic modeling, dynamical systems, and computation. My work spans spectral graph theory, discrete geometry, and inference. My current work is in filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing, global climate models). 
-::: 
+
+::: {style="text-align: left"}
+
+## Recent Posts
+
+:::{#recent-posts}
+:::
+
+
+
+## News
+
+- **December 2025**: Featured in [Reed College Magazine](https://www.reed.edu/reed-magazine/articles/2025/what-is-a-reedie/sajid-bin-mahamud.html) discussing life at Reed College.
+
+:::

@@ -1,11 +1,11 @@
 ---
 title: "About"
-image: gerape.jpeg
+image: bio.jpg
 format: html
 
 ---
 
-![](gerappee.jpeg)
+![](bio.jpg){width=300 style="float: left; margin-right: 50px; margin-bottom: 10px;"}
 
 <style>
 body {
@@ -13,8 +13,7 @@ text-align: justify}
 </style>
 
 
-
-*The family of Giraffe Graphs was discovered on July 5, 2023 in Ames, Iowa. Last time I checked, they continue remain a happy family. It is the belief of this author that the youngest one has ADHD.*
+I’m Sajid Bin Mahamud, a mathematics graduate with a research focus in probabilistic modeling, dynamical systems, and computation. My work spans spectral graph theory, discrete geometry, and inference. My current work is in filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing, global climate models).
 
 
  

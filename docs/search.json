@@ -11,14 +11,28 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "The family of Giraffe Graphs was discovered on July 5, 2023 in Ames, Iowa. Last time I checked, they continue remain a happy family. It is the belief of this author that the youngest one has ADHD."
+    "text": "I’m Sajid Bin Mahamud, a mathematics graduate with a research focus in probabilistic modeling, dynamical systems, and computation. My work spans spectral graph theory, discrete geometry, and inference. My current work is in filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing, global climate models)."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Sajid Bin Mahamud",
+    "title": "Personal Website of Sajid Bin Mahamud",
     "section": "",
-    "text": "I’m Sajid Bin Mahamud, a mathematics graduate with a research focus in probabilistic modeling, dynamical systems, and computation. My work spans spectral graph theory, discrete geometry, and inference. My current work is in filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing, global climate models)."
+    "text": "Introduction to Crofton’s Formula in Geometric Probability\n\n\n\n\n\n\nDec 17, 2024\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\nDecember 2025: Featured in Reed College Magazine discussing life at Reed College."
+  },
+  {
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "Personal Website of Sajid Bin Mahamud",
+    "section": "",
+    "text": "Introduction to Crofton’s Formula in Geometric Probability\n\n\n\n\n\n\nDec 17, 2024\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Personal Website of Sajid Bin Mahamud",
+    "section": "",
+    "text": "December 2025: Featured in Reed College Magazine discussing life at Reed College."
   },
   {
     "objectID": "posts/Dirichlet/index.html",
@@ -140,6 +154,13 @@
     "text": "Bin, Mahamud, S. Spectral Characterization of the Closed Walk Matrix. Reed College, 2025.\n\nAdvisor: Dr. Jamie Pommersheim."
   },
   {
+    "objectID": "publications.html#thesis",
+    "href": "publications.html#thesis",
+    "title": "Publications",
+    "section": "",
+    "text": "Bin, Mahamud, S. Spectral Characterization of the Closed Walk Matrix. Reed College, 2025.\n\nAdvisor: Dr. Jamie Pommersheim."
+  },
+  {
     "objectID": "publications.html#journal-articles",
     "href": "publications.html#journal-articles",
     "title": "Publications",
@@ -173,19 +194,5 @@
     "title": "Curriculum Vitae",
     "section": "Experience",
     "text": "Experience\n\nThis browser does not support PDFs. Please download the PDF to view it: &lt;a href=\"files/cv.pdf\"&gt;Download PDF&lt;/a&gt;\n\n\n  Download CV"
-  },
-  {
-    "objectID": "publications.html#thesis",
-    "href": "publications.html#thesis",
-    "title": "Publications",
-    "section": "",
-    "text": "Bin, Mahamud, S. Spectral Characterization of the Closed Walk Matrix. Reed College, 2025.\n\nAdvisor: Dr. Jamie Pommersheim."
-  },
-  {
-    "objectID": "research.html#online-gps-spoofing-detection-algorithm",
-    "href": "research.html#online-gps-spoofing-detection-algorithm",
-    "title": "Research",
-    "section": "### Online GPS spoofing detection algorithm",
-    "text": "### Online GPS spoofing detection algorithm\n\nError Propagation and Regime Change Detection in climate models\nDescription of the project goes here."
   }
 ]
