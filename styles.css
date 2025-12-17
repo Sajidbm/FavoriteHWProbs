@@ -5,3 +5,21 @@
     object-position: 50% 80%;
     /* Start with center. Change to 'top', 'bottom', or '50% 30%' to fine-tune */
 }
+
+body {
+    background-color: #f7f9fb; /* Light grayish blue background */
+}
+
+/* Semi-transparent background for the main content area */
+.page-columns, .quarto-container {
+     /* Ensure the container doesn't span full width if not needed, to show background */
+}
+
+main.content {
+    background-color: rgba(255, 255, 255, 0.85); /* White with opacity */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
