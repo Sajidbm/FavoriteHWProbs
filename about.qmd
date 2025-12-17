@@ -2,7 +2,6 @@
 title: "About"
 image: bio.jpg
 format: html
-
 ---
 
 ![](bio.jpg){width=300 style="float: left; margin-right: 50px; margin-bottom: 10px;"}
@@ -14,6 +13,12 @@ text-align: justify}
 
 
 I’m Sajid Bin Mahamud, a mathematics graduate with a research focus in probabilistic modeling, dynamical systems, and computation. My work spans spectral graph theory, discrete geometry, and inference. My current work is in filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing, global climate models).
+
+<div style="clear: both; padding-top: 20px; text-align: center;">
+  <a href="https://www.linkedin.com/in/sajid-mahamud-6119351a8/" class="btn btn-outline-primary" role="button" style="margin: 5px;"><i class="bi bi-linkedin"></i> LinkedIn</a>
+  <a href="https://github.com/Sajidbm" class="btn btn-outline-dark" role="button" style="margin: 5px;"><i class="bi bi-github"></i> Github</a>
+  <a href="mailto:sajidmahmud61@gmail.com" class="btn btn-outline-secondary" role="button" style="margin: 5px;"><i class="bi bi-envelope"></i> Contact</a>
+</div>
 
 
  

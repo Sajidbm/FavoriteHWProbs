@@ -1,17 +1,5 @@
 ---
-title: "Personal Website of Sajid Bin Mahamud"
-about:
-  template: jolla
-  links:
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/sajid-mahamud-6119351a8/
-    - icon: github
-      text: Github
-      href: https://github.com/Sajidbm
-    - icon: envelope
-      text: Contact
-      href: mailto:sajidmahmud61@gmail.com
+title: "Home"
 listing:
   id: recent-posts
   contents: posts
