@@ -12,8 +12,8 @@ website:
         href: research.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "CV"
-        href: cv.qmd
+      - text: "Talks"
+        href: talks.qmd
       - text: "Blog"
         href: blog.qmd
     right:

@@ -1,0 +1,30 @@
+---
+title: "Talks and Posters"
+---
+
+A collection of selected presentations and posters.
+
+- **[The Closed Walk Matrix and relation to GI](https://drive.google.com/file/d/11P9YeN8ZWk33TK7USWWVQ1zfAd_aQUis/view)**
+  Joint Math Meetings, Jan 9, 2025.
+
+- **[Sylvester's four point problem and Crofton's Formula](https://drive.google.com/file/d/1YKZHFy0CzF3SrayvzZ3zBL08WlsNzEAi/view?usp=sharing)**
+  Class Presentation - Probability, Reed College, Dec 16, 2024.
+
+- **[Artificial intelligence and unit distance graphs](https://drive.google.com/file/d/15KOgwtA0U9rKPdmiVUiWi6J8rCv9d_us/view)**
+  Budapest Semesters in Mathematics, Research Presentation, Feb 22, 2024.
+
+- **[On coalescing results for the distance matrix](https://drive.google.com/file/d/1ICYHpkJ7kcMzBuQmnmelEnmT2UpQ4WR1/view)**
+  Young Mathematicians Conference, Ohio State University, Aug 16, 2023.
+  Pi Mu Epsilon Poster Session, Joint Math Meetings, Jan 5, 2024.
+
+- **[Spectral properties of the distance matrix: An investigation](https://drive.google.com/file/d/173K1oxd9whGVsewwvkZUPr7ROJgGZg9t/view)**
+  Research Presentation Seminar, Iowa State University, Jul 28, 2023.
+
+- **[Markov chains and its application in the internet](https://drive.google.com/file/d/1qXH2oCtEFnG0iIatpi6OXk14nYu3gzvs/view)**
+  Class Presentation - Linear Algebra, Reed College, Dec 1, 2022.
+
+- **[Using a causal framework to study patterns in police-involved shootings](https://drive.google.com/file/d/1cPbJlpfgh-PxOI02BNG4bS6Zl0QUhaTR/view)**
+  Presidential Advisory Board Panel, Reed College, Nov 11, 2022.
+
+- **[Micro-analysis of use of force by law enforcement in California](https://drive.google.com/file/d/1jeYMbijAkgCStoOPLqYYeDyqkakiGUBY/view)**
+  Summer Research Poster Session, Reed College, Sept 2, 2022.
