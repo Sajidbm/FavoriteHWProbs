@@ -17,3 +17,13 @@ I have conducted research in a wide variety of fields including spectral graph t
 - State-of-the-art approaches like **NeuralGCM** combine differentiable fluid dynamics solvers with neural networks to learn these sub-grid impacts from high-resolution data.
 - My research investigates error propagation within these hybrid systems, specifically aiming to detect **regime changes** where the model drifts from physics based forecast.
 - I utilize **Ensemble Kalman Filters (EnKF)** to track the covariance of the model state, using the filter's divergence as a diagnostic tool for identifying "unphysical" error growth or regime shifts. 
+
+## Past Projects
+
+### [Closed-walk matrices and cospectrality in graph spectra](https://drive.google.com/file/d/1EgXXoDRa3cVX78nx1LN_WEuPK6CwHtDl/view)
+
+- Many non-isomorphic graphs share the same adjacency spectrum, so understanding the typical size of cospectral equivalence classes matters for counting how many distinct spectra occur asymptotically.
+- A natural route to lower bounds uses Godsil–McKay switching, which preserves spectrum, but the method does not automatically certify non-isomorphism, creating a bottleneck for rigorous class-size constructions.
+- I proposed a finer equivalence relation based on the closed-walk matrix that records closed-walk counts across lengths.
+- Using this framework, I constructed closed-walk-equivalent graph families under specific restrictions and developed simple algorithmic checks to find out when these constructions plausibly give rise to non-isomorphic examples.
+- A central remaining challenge is to develop sufficient conditions that guarantee non-isomorphism inside these equivalence classes.
