@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Sajid Bin Mahamud"
 image: bio.jpg
 format: html
 ---
@@ -12,7 +12,7 @@ text-align: justify}
 </style>
 
 
-I’m Sajid Bin Mahamud, a mathematics graduate with a research focus in probabilistic modeling, dynamical systems, and computation. My work spans spectral graph theory, discrete geometry, and inference. My current work is in filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing, global climate models).
+I'm currently working as a research engineer at Galois, Inc. I hold a bachelor's degree in mathematics from Reed College. My work spans spectral graph theory, discrete geometry, and inference. At Galois, I have worked on probabilistic filtering and anomaly detection for dynamical systems (e.g., UAV navigation under GPS spoofing), AI-assisted formal verification, and formal verification benchmarking.
 
 <div style="clear: both; padding-top: 20px; text-align: center;">
   <a href="https://www.linkedin.com/in/sajid-mahamud-6119351a8/" class="btn btn-outline-primary" role="button" style="margin: 5px;"><i class="bi bi-linkedin"></i> LinkedIn</a>
